@@ -1,0 +1,3330 @@
+-------------------------------------------------------------------------------------
+MATLAB Version 7.12.0.635 (R2011a)
+MATLAB License Number: 161052
+Operating System: Microsoft Windows 7 Version 6.1 (Build 7601: Service Pack 1)
+Java VM Version: Java 1.6.0_17-b04 with Sun Microsystems Inc. Java HotSpot(TM) 64-Bit Server VM mixed mode
+-------------------------------------------------------------------------------------
+Image Acquisition Toolbox                             Version 4.1        (R2011a)
+
+----------DATE/TIME----------
+
+13-Nov-2015 15:55:02
+
+
+----------DIRECTX----------
+
+DirectX Version: 10.0
+
+
+----------AVAILABLE HARDWARE----------
+
+    InstalledAdaptors: {'avtmatlabadaptor64_r2009b'  'gige'  'matrox'  'winvideo'}
+        MATLABVersion: '7.12 (R2011a)'
+          ToolboxName: 'Image Acquisition Toolbox'
+       ToolboxVersion: '4.1 (R2011a)'
+
+
+----------THIRD PARTY ADAPTORS REGISTERED WITH IMAQREGISTER----------
+
+
+ans = 
+
+    [1x95 char]
+
+
+----------AVTMATLABADAPTOR64_R2009B ADAPTOR----------
+
+Adaptor Name: avtmatlabadaptor64_r2009b
+Adaptor DLL: C:\Program Files\Allied Vision Technologies\MatlabAdaptor\Adaptor\AVTMatlabAdaptor64_R2009b.dll
+
+IMAQHWINFO: 
+       AdaptorDllName: [1x95 char]
+    AdaptorDllVersion: '4.1 (R2011a)'
+          AdaptorName: 'avtmatlabadaptor64_r2009b'
+            DeviceIDs: {1x0 cell}
+           DeviceInfo: [1x0 struct]
+
+
+Available Devices: 
+
+----------GIGE ADAPTOR----------
+
+Adaptor Name: gige
+Adaptor DLL: C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaqadaptors\win64\mwgigeimaq.dll
+
+IMAQHWINFO: 
+       AdaptorDllName: [1x77 char]
+    AdaptorDllVersion: '4.1 (R2011a)'
+          AdaptorName: 'gige'
+            DeviceIDs: {[1]}
+           DeviceInfo: [1x1 struct]
+
+
+Available Devices: 
+
+	Device Name: Goldeye P-008 SWIR
+	Device ID: 1
+	Device File Supported: 0
+	Default Format: Mono12
+	Supported Formats: 
+
+    'Mono12'
+
+
+----------MATROX ADAPTOR----------
+
+Adaptor Name: matrox
+Adaptor DLL: C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaqadaptors\win64\mwmatroximaq.dll
+
+IMAQHWINFO: 
+       AdaptorDllName: [1x79 char]
+    AdaptorDllVersion: '4.1 (R2011a)'
+          AdaptorName: 'matrox'
+            DeviceIDs: {1x0 cell}
+           DeviceInfo: [1x0 struct]
+
+
+Available Devices: 
+
+----------WINVIDEO ADAPTOR----------
+
+Adaptor Name: winvideo
+Adaptor DLL: C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaqadaptors\win64\mwwinvideoimaq.dll
+
+IMAQHWINFO: 
+       AdaptorDllName: [1x81 char]
+    AdaptorDllVersion: '4.1 (R2011a)'
+          AdaptorName: 'winvideo'
+            DeviceIDs: {[1]}
+           DeviceInfo: [1x1 struct]
+
+
+Available Devices: 
+
+	Device Name: 1.3M HD WebCam
+	Device ID: 1
+	Device File Supported: 0
+	Default Format: YUY2_1280x1024
+	Supported Formats: 
+
+    'YUY2_1280x1024'
+    'YUY2_1280x720'
+    'YUY2_1280x800'
+    'YUY2_160x120'
+    'YUY2_176x144'
+    'YUY2_320x240'
+    'YUY2_352x288'
+    'YUY2_640x480'
+
+
+
+----------EXISTING VIDEOINPUT OBJECT DISPLAY----------
+
+	Adaptor Name: gige
+	Device Name: Goldeye P-008 SWIR
+	Max Height: 256
+	Max Width: 320
+	Native Data Type: uint16
+	Total Sources: 1
+	Vendor Driver Description: Image Acquisition Toolbox GigE Vision Adaptor
+	Vendor Driver Version: 1.1
+
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    AcquisitionMode = Continuous
+    AutoCalibrationInterval = 0
+    AutoCalibrationMode = 1
+    BGC_OffsetValue = 0
+    BGC_OperationMode = 0
+    BinningHorizontal = 1
+    BinningVertical = 1
+    BPC_CorrectionData_FileNumber = 112
+    BPC_OperationMode = Activated
+    BulkRxTimeoutCounterValue = 10000
+    CorrectionDataSet = 5
+    CounterResetActivation = Off
+    CounterResetSource = PLC_Q3
+    DarkTime = 2.0000e+004
+    DarkTime_Max = 64879
+    DarkTime_Min = 990
+    DarkTimeAbs = 2.0000e+004
+    DarkTimeAbsMs = 19
+    DarkTimeGranularity = 32
+    DecimationHorizontal = 1
+    DecimationVertical = 1
+    DeviceID = 09000002
+    DeviceManufacturerInfo = Germany  (00080602)B
+    DeviceModelName = Goldeye P-008 SWIR€B
+    DeviceScanType = Areascan
+    DeviceUserID = 5í
+    DeviceVendorName = Allied Vision Technologies GmbH
+    DeviceVersion = 3.1.0  (02.05.05)2)B
+    ExposureActiveTriggerMode = Off
+    ExposureMode = Timed
+    ExposureTime = 2.0000e+003
+    ExposureTime_Max = 5898
+    ExposureTime_Min = 90
+    ExposureTimeAbs = 2.0000e+003
+    ExposureTimeAbsMs = 1
+    ExposureTimeGranularity = 2
+    Gain = 1
+    GainRaw = 1
+    GrbCh0AcqCfgIncludeMetadataInImage = False
+    GrbCh0AcqCfgInvertPixelData = False
+    GrbCh0AcqCfgMemoryWaterLevel = Level75
+    GrbCh0AcqCfgPixelBusDataPortMapping = CBA
+    GrbCh0MetadataInsertionMode = FirstFourBytesOfFirstAcquiredLine
+    GrbCh0MetadataMsbOverride = NotOverriden
+    GrbCh0MetadataSourceSelection = BlockID
+    GrbCh0TrigCfgAutomaticInternalRetrigger = False
+    GrbCh0TrigCfgContinuousPipeCount = Two
+    GrbCh0TrigCfgFrameToSkip = 0
+    GrbCh0TrigCfgPLCTriggerable = False
+    HighSpeedMode = False
+    IIS_OperationMode = 0
+    IPEngineBulk0I2cEnable = True
+    IPEngineBulk0UartEnable = True
+    IPEngineBulk0UsrtEnable = True
+    IPEngineBulkUsrt0BreakDetection = True
+    IPEngineDeviceID = 8
+    IPEngineFirmwareVersionMajor = 2
+    IPEngineFirmwareVersionMinor = 5
+    IPEngineFirmwareVersionSubminor = 5
+    IPEngineGrbPreProcessorDataInvertDisabled = False
+    IPEngineGrbPreProcessorDataShiftDisabled = False
+    IPEngineGrbPreProcessorPortMapDisabled = False
+    IPEngineInitSequenceStatus = 2
+    IPEngineModuleID = 6
+    IPEngineNumberOfBulkInterfaces = 2
+    IPEngineNumberOfUARTInterfaces = 2
+    IPEngineNumberOfUserSetsSupported = OneUserSet
+    IPEngineStaticCfgIsSupported = True
+    IPEngineSubModuleID = 2
+    IPEngineUseAnalogFeatures = False
+    IPEngineUsePlayback = False
+    IPEngineUserSetsStatusReporting = True
+    IPEngineUseUart0BreakDetection = True
+    IPEngineUseUart0BreakGeneration = True
+    IPEngineUseUart1BreakDetection = True
+    IPEngineUseUart1BreakGeneration = True
+    IPEngineUseWrapAround = False
+    IPEngineVendorID = 0
+    Line0Configuration = Zero
+    Line0DebounceFactor = 0
+    Line0Inverter = False
+    Line0Mode = Input
+    Line0Status = False
+    Line1Configuration = Zero
+    Line1DebounceFactor = 0
+    Line1Inverter = False
+    Line1Mode = Input
+    Line1Status = False
+    Line2Configuration = Zero
+    Line2DebounceFactor = 0
+    Line2Inverter = False
+    Line2Mode = Input
+    Line2Status = False
+    Line3Configuration = Zero
+    Line3DebounceFactor = 0
+    Line3DownTo0Status = 0
+    Line3Inverter = False
+    Line3Mode = Input
+    Line3Status = False
+    PacketSize = 1514
+    PG_MaxGranularity = 65535
+    PG_MaxWidth = 65535
+    PixelColorFilter = None
+    PLC_ctrl0 = False
+    PLC_ctrl1 = False
+    PLC_ctrl2 = False
+    PLC_ctrl3 = False
+    PLC_del0_DelayCount = 1
+    PLC_del0_InputSignal = PLC_Q3
+    PLC_del0_ReferenceTimingSignal = PLC_rsl0_out
+    PLC_gp_cnt0_CompareValue = 0
+    PLC_gp_cnt0_DecrementActivation = Off
+    PLC_gp_cnt0_IncrementActivation = Off
+    PLC_gp_cnt0_ResetActivation = Off
+    PLC_gp_cnt0_ResetSource = PLC_Q3
+    PLC_gp_cnt0_Value = 0
+    PLC_I0 = Line0
+    PLC_I1 = Line1
+    PLC_I2 = Line2
+    PLC_I3 = Line3
+    PLC_I4 = PLC_ctrl1
+    PLC_I5 = PLC_ctrl0
+    PLC_I6 = Timer2Out
+    PLC_I7 = Timer1Out
+    PLC_Interrupt_FIFO0_Q10_Enabled = False
+    PLC_Interrupt_FIFO0_Q15_Enabled = True
+    PLC_Interrupt_FIFO0_Q3_Enabled = False
+    PLC_Interrupt_FIFO0_Q7_Enabled = False
+    PLC_pg0_Delay = 1
+    PLC_pg0_GranularityFactor = 2
+    PLC_pg0_PulseFrequency = 499.9600
+    PLC_pg0_PulsePeriod = 2000160
+    PLC_pg0_TriggerActivation = FallingEdge
+    PLC_pg0_TriggerSource = PLC_Q9
+    PLC_pg0_Width = 22222
+    PLC_pg1_Delay = 1
+    PLC_pg1_GranularityFactor = 32
+    PLC_pg1_PulseFrequency = 49.9951
+    PLC_pg1_PulsePeriod = 20001960
+    PLC_pg1_TriggerActivation = FallingEdge
+    PLC_pg1_TriggerSource = PLC_Q8
+    PLC_pg1_Width = 20202
+    PLC_pg2_Delay = 1024
+    PLC_pg2_GranularityFactor = 0
+    PLC_pg2_PulseFrequency = 6.5091e+003
+    PLC_pg2_PulsePeriod = 153630
+    PLC_pg2_TriggerActivation = RisingEdge
+    PLC_pg2_TriggerSource = PLC_Q11
+    PLC_pg2_Width = 4096
+    PLC_pg3_Delay = 1024
+    PLC_pg3_GranularityFactor = 0
+    PLC_pg3_PulseFrequency = 6.5091e+003
+    PLC_pg3_PulsePeriod = 153630
+    PLC_pg3_TriggerActivation = RisingEdge
+    PLC_pg3_TriggerSource = PLC_Q10
+    PLC_pg3_Width = 4096
+    PLC_pg_PulseFrequencyMax = 1.1111e+007
+    PLC_pg_PulseFrequencyMin = 0.0039
+    PLC_pg_PulsePeriodMaxInt = 2.1475e+009
+    PLC_pg_PulsePeriodMinInt = 90
+    PLC_Q0_Configuration = Zero
+    PLC_Q0_Operator0 = Or
+    PLC_Q0_Operator1 = Or
+    PLC_Q0_Operator2 = Or
+    PLC_Q0_Variable0 = Zero
+    PLC_Q0_Variable1 = Zero
+    PLC_Q0_Variable2 = Zero
+    PLC_Q0_Variable3 = Zero
+    PLC_Q10_Operator0 = Or
+    PLC_Q10_Operator1 = Or
+    PLC_Q10_Operator2 = Or
+    PLC_Q10_Variable0 = Zero
+    PLC_Q10_Variable1 = Zero
+    PLC_Q10_Variable2 = Zero
+    PLC_Q10_Variable3 = Zero
+    PLC_Q11_Operator0 = Or
+    PLC_Q11_Operator1 = Or
+    PLC_Q11_Operator2 = Or
+    PLC_Q11_Variable0 = Zero
+    PLC_Q11_Variable1 = Zero
+    PLC_Q11_Variable2 = Zero
+    PLC_Q11_Variable3 = Zero
+    PLC_Q12_Operator0 = Or
+    PLC_Q12_Operator1 = Or
+    PLC_Q12_Operator2 = Or
+    PLC_Q12_Variable0 = Zero
+    PLC_Q12_Variable1 = Zero
+    PLC_Q12_Variable2 = Zero
+    PLC_Q12_Variable3 = Zero
+    PLC_Q13_Operator0 = Or
+    PLC_Q13_Operator1 = Or
+    PLC_Q13_Operator2 = Or
+    PLC_Q13_Variable0 = Zero
+    PLC_Q13_Variable1 = Zero
+    PLC_Q13_Variable2 = Zero
+    PLC_Q13_Variable3 = Zero
+    PLC_Q14_Operator0 = Or
+    PLC_Q14_Operator1 = Or
+    PLC_Q14_Operator2 = Or
+    PLC_Q14_Variable0 = Zero
+    PLC_Q14_Variable1 = Zero
+    PLC_Q14_Variable2 = Zero
+    PLC_Q14_Variable3 = Zero
+    PLC_Q15_Operator0 = Or
+    PLC_Q15_Operator1 = Or
+    PLC_Q15_Operator2 = Or
+    PLC_Q15_Variable0 = Zero
+    PLC_Q15_Variable1 = Zero
+    PLC_Q15_Variable2 = Zero
+    PLC_Q15_Variable3 = Zero
+    PLC_Q16_Operator0 = Or
+    PLC_Q16_Operator1 = Or
+    PLC_Q16_Operator2 = Or
+    PLC_Q16_Variable0 = Zero
+    PLC_Q16_Variable1 = Zero
+    PLC_Q16_Variable2 = Zero
+    PLC_Q16_Variable3 = Zero
+    PLC_Q17_Operator0 = Or
+    PLC_Q17_Operator1 = Or
+    PLC_Q17_Operator2 = Or
+    PLC_Q17_Variable0 = Zero
+    PLC_Q17_Variable1 = Zero
+    PLC_Q17_Variable2 = Zero
+    PLC_Q17_Variable3 = Zero
+    PLC_Q1_Configuration = Zero
+    PLC_Q1_Operator0 = Or
+    PLC_Q1_Operator1 = Or
+    PLC_Q1_Operator2 = Or
+    PLC_Q1_Variable0 = Zero
+    PLC_Q1_Variable1 = Zero
+    PLC_Q1_Variable2 = Zero
+    PLC_Q1_Variable3 = Zero
+    PLC_Q2_Configuration = Zero
+    PLC_Q2_Operator0 = Or
+    PLC_Q2_Operator1 = Or
+    PLC_Q2_Operator2 = Or
+    PLC_Q2_Variable0 = Zero
+    PLC_Q2_Variable1 = Zero
+    PLC_Q2_Variable2 = Zero
+    PLC_Q2_Variable3 = Zero
+    PLC_Q3_Configuration = Zero
+    PLC_Q3_Operator0 = Or
+    PLC_Q3_Operator1 = Or
+    PLC_Q3_Operator2 = Or
+    PLC_Q3_Variable0 = Zero
+    PLC_Q3_Variable1 = Zero
+    PLC_Q3_Variable2 = Zero
+    PLC_Q3_Variable3 = Zero
+    PLC_Q4_Configuration = Zero
+    PLC_Q4_Operator0 = Or
+    PLC_Q4_Operator1 = Or
+    PLC_Q4_Operator2 = Or
+    PLC_Q4_Variable0 = PLC_I7
+    PLC_Q4_Variable1 = PLC_I0
+    PLC_Q4_Variable2 = Zero
+    PLC_Q4_Variable3 = Zero
+    PLC_Q5_Configuration = Zero
+    PLC_Q5_Operator0 = Or
+    PLC_Q5_Operator1 = Or
+    PLC_Q5_Operator2 = Or
+    PLC_Q5_Variable0 = One
+    PLC_Q5_Variable1 = Zero
+    PLC_Q5_Variable2 = Zero
+    PLC_Q5_Variable3 = Zero
+    PLC_Q6_Configuration = Zero
+    PLC_Q6_Operator0 = Or
+    PLC_Q6_Operator1 = Or
+    PLC_Q6_Operator2 = Or
+    PLC_Q6_Variable0 = One
+    PLC_Q6_Variable1 = Zero
+    PLC_Q6_Variable2 = Zero
+    PLC_Q6_Variable3 = Zero
+    PLC_Q7_Configuration = Zero
+    PLC_Q7_Operator0 = Or
+    PLC_Q7_Operator1 = Or
+    PLC_Q7_Operator2 = Or
+    PLC_Q7_Variable0 = One
+    PLC_Q7_Variable1 = Zero
+    PLC_Q7_Variable2 = Zero
+    PLC_Q7_Variable3 = Zero
+    PLC_Q8_Operator0 = Or
+    PLC_Q8_Operator1 = Or
+    PLC_Q8_Operator2 = Or
+    PLC_Q8_Variable0 = PLC_I7
+    PLC_Q8_Variable1 = Zero
+    PLC_Q8_Variable2 = Zero
+    PLC_Q8_Variable3 = Zero
+    PLC_Q9_Operator0 = Or
+    PLC_Q9_Operator1 = Or
+    PLC_Q9_Operator2 = Or
+    PLC_Q9_Variable0 = PLC_I6
+    PLC_Q9_Variable1 = Zero
+    PLC_Q9_Variable2 = Zero
+    PLC_Q9_Variable3 = Zero
+    PLC_rsl0_BackupEnabled = False
+    PLC_rsl0_BackupInputSignal = Timer1Out
+    PLC_rsl0_BackupSwitchoverDelay = 0
+    PLC_rsl0_Divider = 256
+    PLC_rsl0_Granularity = OneSystemClockCycle
+    PLC_rsl0_InputFrequency = 1.0000e-008
+    PLC_rsl0_InputSignal = PLC_Q3
+    PLC_rsl0_Multiplier = FrequencyX256
+    PLC_rsl0_OutputFrequency = 1.0000e-008
+    PLC_rsl0_SampleSize = SixteenBit
+    PLC_rsl0_SignalInPeriod = 65535
+    PLC_rsl_InputFrequencyMax = 3.3333e+007
+    PLC_ts_trig0_Enable = False
+    PLC_ts_trig1_Enable = False
+    PLC_ts_trig2_Enable = False
+    PLC_ts_trig3_Enable = False
+    PLC_ts_trig_CounterSelect = GevTimestampValueLow
+    PLC_ts_trig_FIFOEmpty = True
+    PLC_ts_trig_FIFOFull = False
+    PLC_ts_trig_Time = 0
+    PlcCapabilityRegisterIsImplemented = True
+    PlcDebouncerIsAvailable = True
+    PlcDebouncing0Reserved = 0
+    PlcDebouncing1Reserved = 0
+    PlcFunctionSelectIsAvailable = True
+    PlcGPIO = 0
+    PlcInterruptFifoIsAvailable = True
+    PlcLutCfg1 = 0
+    PlcNumberOfCounters = 1
+    PlcNumberOfDelayers = 1
+    PlcNumberOfPulseGen = 4
+    PlcNumberOfRescalers = 1
+    PlcRslMultiplierWidth = SixteenBit
+    PlcRslWatchdogIsAvailable = True
+    PlcTsTrigIsAvailable = True
+    StartExposureTimer = True
+    TPC_CorrectionData_FileNumber = 96
+    TPC_FirstImage_HighRef = 64
+    TPC_FirstImage_LowRef = 32
+    TPC_OperationMode = Activated
+    TPC_SetValue_HighRef = 48320
+    TPC_SetValue_LowRef = 16528
+    Uart0BaudRate = Baud115200
+    Uart0BaudRateFactor = 16
+    Uart0BreakDetection = False
+    Uart0BreakGeneration = False
+    Uart0Loopback = False
+    Uart0NumOfStopBits = One
+    Uart0Parity = None
+    Uart0ReadyToReceive = False
+    Uart1BaudRate = Baud9600
+    Uart1BaudRateFactor = 16
+    Uart1BreakDetection = False
+    Uart1BreakGeneration = False
+    Uart1Loopback = False
+    Uart1NumOfStopBits = One
+    Uart1Parity = None
+    Uart1ReadyToReceive = False
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    AcquisitionMode: [ {Continuous} | MultiFrame | SingleFrame ]
+    AutoCalibrationInterval
+    AutoCalibrationMode
+    BGC_OffsetValue
+    BGC_OperationMode
+    BinningHorizontal
+    BinningVertical
+    BPC_OperationMode: [ {Activated} | Deactivated | Test ]
+    BulkRxTimeoutCounterValue
+    CorrectionDataSet
+    CounterResetActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    CounterResetSource: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    DarkTime
+    DarkTimeAbs
+    DarkTimeAbsMs
+    DarkTimeGranularity
+    DecimationHorizontal
+    DecimationVertical
+    DeviceUserID
+    ExposureActiveTriggerMode: [ {Off} | On ]
+    ExposureMode: [ {Off} | Timed ]
+    ExposureTime
+    ExposureTimeAbs
+    ExposureTimeAbsMs
+    ExposureTimeGranularity
+    Gain
+    GainRaw
+    GrbCh0AcqCfgIncludeMetadataInImage: [ {False} | True ]
+    GrbCh0AcqCfgInvertPixelData: [ {False} | True ]
+    GrbCh0AcqCfgMemoryWaterLevel: [ {Level75} | Level100 | Level50 | Level87Point5 ]
+    GrbCh0AcqCfgPixelBusDataPortMapping: [ {CBA} | ABC | ACB | BAC | BCA | CAB ]
+    GrbCh0MetadataInsertionMode: [ {FirstFourBytesOfFirstAcquiredLine} | FirstFourBytesOfEveryAcquiredLines ]
+    GrbCh0MetadataMsbOverride: [ {NotOverriden} | PLC_Q0ToPLC_Q7 ]
+    GrbCh0MetadataSourceSelection: [ {BlockID} | GevTimestampValueLow ]
+    GrbCh0TrigCfgAutomaticInternalRetrigger: [ {False} | True ]
+    GrbCh0TrigCfgContinuousPipeCount: [ {Two} | Continuous | One ]
+    GrbCh0TrigCfgFrameToSkip
+    GrbCh0TrigCfgPLCTriggerable: [ {False} | True ]
+    HighSpeedMode: [ {False} | True ]
+    IIS_OperationMode
+    Line0Configuration: [ {Zero} | One | Three | Two ]
+    Line0DebounceFactor
+    Line1Configuration: [ {Zero} | One | Three | Two ]
+    Line1DebounceFactor
+    Line2Configuration: [ {Zero} | One | Three | Two ]
+    Line2DebounceFactor
+    Line3Configuration: [ {Zero} | One | Three | Two ]
+    Line3DebounceFactor
+    PacketSize: [ {1514} | 590 | 4088 | 9014 | 16128 ]
+    PG_MaxGranularity
+    PG_MaxWidth
+    PLC_ctrl0: [ {False} | True ]
+    PLC_ctrl1: [ {False} | True ]
+    PLC_ctrl2: [ {False} | True ]
+    PLC_ctrl3: [ {False} | True ]
+    PLC_del0_DelayCount
+    PLC_del0_InputSignal: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_del0_ReferenceTimingSignal: [ {PLC_rsl0_out} | Timer1Out | Timer2Out | Timer3Out | Timer4Out ]
+    PLC_gp_cnt0_CompareValue
+    PLC_gp_cnt0_DecrementActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_IncrementActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_ResetActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_ResetSource: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_I0: [ {Line0} | Line1 | Line2 | PLC_A4 | PLC_A5 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl2 | PLC_rsl0_out | Timer1Out | Timer2Out ]
+    PLC_I1: [ {Line1} | Line0 | Line3 | PLC_A4 | PLC_A5 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl3 | PLC_rsl0_out | Timer3Out | Timer4Out ]
+    PLC_I2: [ {Line2} | Counter1Eq | Line0 | Line1 | PLC_A4 | PLC_Q2 | PLC_Q6 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl3 | PLC_del0_out | PLC_rsl0_out | Timer1Out | Timer2Out ]
+    PLC_I3: [ {Line3} | Counter1Gt | Line0 | Line1 | PLC_A5 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | Timer3Out | Timer4Out ]
+    PLC_I4: [ {PLC_ctrl1} | Counter1Eq | Line0 | Line1 | Line2 | PLC_A5 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig3 | Timer1Out ]
+    PLC_I5: [ {PLC_ctrl0} | Counter1Gt | Line0 | Line1 | Line3 | PLC_A4 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl3 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig2 | Timer3Out ]
+    PLC_I6: [ {Timer2Out} | Counter1Eq | Line0 | Line1 | PLC_A4 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl1 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig1 | Timer4Out ]
+    PLC_I7: [ {Timer1Out} | Counter1Gt | Line0 | Line1 | Line3 | PLC_A4 | PLC_A5 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ts_trig0 | Timer3Out ]
+    PLC_Interrupt_FIFO0_Q10_Enabled: [ {False} | True ]
+    PLC_Interrupt_FIFO0_Q15_Enabled: [ {True} | False ]
+    PLC_Interrupt_FIFO0_Q3_Enabled: [ {False} | True ]
+    PLC_Interrupt_FIFO0_Q7_Enabled: [ {False} | True ]
+    PLC_pg0_Delay
+    PLC_pg0_GranularityFactor
+    PLC_pg0_TriggerActivation: [ {FallingEdge} | AnyEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_pg0_TriggerSource: [ {PLC_Q9} | Continuous ]
+    PLC_pg0_Width
+    PLC_pg1_Delay
+    PLC_pg1_GranularityFactor
+    PLC_pg1_TriggerActivation: [ {FallingEdge} | AnyEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_pg1_TriggerSource: [ {PLC_Q8} | Continuous ]
+    PLC_pg1_Width
+    PLC_pg2_Delay
+    PLC_pg2_GranularityFactor
+    PLC_pg2_TriggerActivation: [ {RisingEdge} | AnyEdge | FallingEdge | LevelHigh | LevelLow ]
+    PLC_pg2_TriggerSource: [ {PLC_Q11} | Continuous ]
+    PLC_pg2_Width
+    PLC_pg3_Delay
+    PLC_pg3_GranularityFactor
+    PLC_pg3_TriggerActivation: [ {RisingEdge} | AnyEdge | FallingEdge | LevelHigh | LevelLow ]
+    PLC_pg3_TriggerSource: [ {PLC_Q10} | Continuous ]
+    PLC_pg3_Width
+    PLC_Q0_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q0_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q0_Operator1: [ {Or} | And | Xor ]
+    PLC_Q0_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q0_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q10_Operator1: [ {Or} | And | Xor ]
+    PLC_Q10_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q10_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q11_Operator1: [ {Or} | And | Xor ]
+    PLC_Q11_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q11_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q12_Operator1: [ {Or} | And | Xor ]
+    PLC_Q12_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q12_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q13_Operator1: [ {Or} | And | Xor ]
+    PLC_Q13_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q13_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q14_Operator1: [ {Or} | And | Xor ]
+    PLC_Q14_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q14_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q15_Operator1: [ {Or} | And | Xor ]
+    PLC_Q15_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q15_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q16_Operator1: [ {Or} | And | Xor ]
+    PLC_Q16_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q16_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q17_Operator1: [ {Or} | And | Xor ]
+    PLC_Q17_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q17_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q1_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q1_Operator1: [ {Or} | And | Xor ]
+    PLC_Q1_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q1_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q2_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q2_Operator1: [ {Or} | And | Xor ]
+    PLC_Q2_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q2_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q3_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q3_Operator1: [ {Or} | And | Xor ]
+    PLC_Q3_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q3_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q4_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q4_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q4_Operator1: [ {Or} | And | Xor ]
+    PLC_Q4_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q4_Variable0: [ {PLC_I7} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7_Not | Zero ]
+    PLC_Q4_Variable1: [ {PLC_I0} | One | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q4_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q4_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q5_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q5_Operator1: [ {Or} | And | Xor ]
+    PLC_Q5_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q5_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q5_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q6_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q6_Operator1: [ {Or} | And | Xor ]
+    PLC_Q6_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q6_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q6_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q7_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q7_Operator1: [ {Or} | And | Xor ]
+    PLC_Q7_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q7_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q7_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q8_Operator1: [ {Or} | And | Xor ]
+    PLC_Q8_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q8_Variable0: [ {PLC_I7} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7_Not | Zero ]
+    PLC_Q8_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q9_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q9_Operator1: [ {Or} | And | Xor ]
+    PLC_Q9_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q9_Variable0: [ {PLC_I6} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q9_Variable1: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | StartTimer | Zero ]
+    PLC_Q9_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q9_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_rsl0_BackupEnabled: [ {False} | True ]
+    PLC_rsl0_BackupInputSignal: [ {Timer1Out} | Timer2Out | Timer3Out | Timer4Out ]
+    PLC_rsl0_BackupSwitchoverDelay
+    PLC_rsl0_Divider
+    PLC_rsl0_Granularity: [ {OneSystemClockCycle} | FourSystemClockCycles | SixteenSystemClockCycles | TwoFiftySixSystemClockCycles ]
+    PLC_rsl0_InputSignal: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_rsl0_Multiplier: [ {FrequencyX256} | FrequencyX16 | FrequencyX4096 ]
+    PLC_ts_trig0_Enable: [ {False} | True ]
+    PLC_ts_trig1_Enable: [ {False} | True ]
+    PLC_ts_trig2_Enable: [ {False} | True ]
+    PLC_ts_trig3_Enable: [ {False} | True ]
+    PLC_ts_trig_CounterSelect: [ {GevTimestampValueLow} | Counter1 ]
+    PLC_ts_trig_Time
+    PlcDebouncing0Reserved
+    PlcDebouncing1Reserved
+    PlcGPIO
+    PlcLutCfg1
+    StartExposureTimer: [ {False} | True ]
+    TPC_OperationMode: [ {Activated} | Deactivated | Deactivated_Test_A | Deactivated_Test_B | OnePointCorrection_Mode_A | OnePointCorrection_Mode_B ]
+    Uart0BaudRate: [ {Baud115200} | Baud14400 | Baud19200 | Baud28800 | Baud38400 | Baud57600 | Baud9600 | Programmable ]
+    Uart0BaudRateFactor
+    Uart0BreakDetection: [ {False} | True ]
+    Uart0BreakGeneration: [ {False} | True ]
+    Uart0Loopback: [ {False} | True ]
+    Uart0NumOfStopBits: [ {One} | Two ]
+    Uart0Parity: [ {None} | Even | Odd ]
+    Uart0ReadyToReceive: [ {False} | True ]
+    Uart1BaudRate: [ {Baud9600} | Baud115200 | Baud14400 | Baud19200 | Baud28800 | Baud38400 | Baud57600 | Programmable ]
+    Uart1BaudRateFactor
+    Uart1BreakDetection: [ {False} | True ]
+    Uart1BreakGeneration: [ {False} | True ]
+    Uart1Loopback: [ {False} | True ]
+    Uart1NumOfStopBits: [ {One} | Two ]
+    Uart1Parity: [ {None} | Even | Odd ]
+    Uart1ReadyToReceive: [ {False} | True ]
+
+
+	Adaptor Name: gige
+	Device Name: Goldeye P-008 SWIR
+	Max Height: 256
+	Max Width: 320
+	Native Data Type: uint16
+	Total Sources: 1
+	Vendor Driver Description: Image Acquisition Toolbox GigE Vision Adaptor
+	Vendor Driver Version: 1.1
+
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    AcquisitionMode = Continuous
+    AutoCalibrationInterval = 0
+    AutoCalibrationMode = 1
+    BGC_OffsetValue = 0
+    BGC_OperationMode = 0
+    BinningHorizontal = 1
+    BinningVertical = 1
+    BPC_CorrectionData_FileNumber = 112
+    BPC_OperationMode = Activated
+    BulkRxTimeoutCounterValue = 10000
+    CorrectionDataSet = 5
+    CounterResetActivation = Off
+    CounterResetSource = PLC_Q3
+    DarkTime = 2.0000e+004
+    DarkTime_Max = 64879
+    DarkTime_Min = 990
+    DarkTimeAbs = 2.0000e+004
+    DarkTimeAbsMs = 19
+    DarkTimeGranularity = 32
+    DecimationHorizontal = 1
+    DecimationVertical = 1
+    DeviceID = 09000002
+    DeviceManufacturerInfo = Germany  (00080602)B
+    DeviceModelName = Goldeye P-008 SWIR€B
+    DeviceScanType = Areascan
+    DeviceUserID = 5í
+    DeviceVendorName = Allied Vision Technologies GmbH
+    DeviceVersion = 3.1.0  (02.05.05)2)B
+    ExposureActiveTriggerMode = Off
+    ExposureMode = Timed
+    ExposureTime = 2.0000e+003
+    ExposureTime_Max = 5898
+    ExposureTime_Min = 90
+    ExposureTimeAbs = 2.0000e+003
+    ExposureTimeAbsMs = 1
+    ExposureTimeGranularity = 2
+    Gain = 1
+    GainRaw = 1
+    GrbCh0AcqCfgIncludeMetadataInImage = False
+    GrbCh0AcqCfgInvertPixelData = False
+    GrbCh0AcqCfgMemoryWaterLevel = Level75
+    GrbCh0AcqCfgPixelBusDataPortMapping = CBA
+    GrbCh0MetadataInsertionMode = FirstFourBytesOfFirstAcquiredLine
+    GrbCh0MetadataMsbOverride = NotOverriden
+    GrbCh0MetadataSourceSelection = BlockID
+    GrbCh0TrigCfgAutomaticInternalRetrigger = False
+    GrbCh0TrigCfgContinuousPipeCount = Two
+    GrbCh0TrigCfgFrameToSkip = 0
+    GrbCh0TrigCfgPLCTriggerable = False
+    HighSpeedMode = False
+    IIS_OperationMode = 0
+    IPEngineBulk0I2cEnable = True
+    IPEngineBulk0UartEnable = True
+    IPEngineBulk0UsrtEnable = True
+    IPEngineBulkUsrt0BreakDetection = True
+    IPEngineDeviceID = 8
+    IPEngineFirmwareVersionMajor = 2
+    IPEngineFirmwareVersionMinor = 5
+    IPEngineFirmwareVersionSubminor = 5
+    IPEngineGrbPreProcessorDataInvertDisabled = False
+    IPEngineGrbPreProcessorDataShiftDisabled = False
+    IPEngineGrbPreProcessorPortMapDisabled = False
+    IPEngineInitSequenceStatus = 2
+    IPEngineModuleID = 6
+    IPEngineNumberOfBulkInterfaces = 2
+    IPEngineNumberOfUARTInterfaces = 2
+    IPEngineNumberOfUserSetsSupported = OneUserSet
+    IPEngineStaticCfgIsSupported = True
+    IPEngineSubModuleID = 2
+    IPEngineUseAnalogFeatures = False
+    IPEngineUsePlayback = False
+    IPEngineUserSetsStatusReporting = True
+    IPEngineUseUart0BreakDetection = True
+    IPEngineUseUart0BreakGeneration = True
+    IPEngineUseUart1BreakDetection = True
+    IPEngineUseUart1BreakGeneration = True
+    IPEngineUseWrapAround = False
+    IPEngineVendorID = 0
+    Line0Configuration = Zero
+    Line0DebounceFactor = 0
+    Line0Inverter = False
+    Line0Mode = Input
+    Line0Status = False
+    Line1Configuration = Zero
+    Line1DebounceFactor = 0
+    Line1Inverter = False
+    Line1Mode = Input
+    Line1Status = False
+    Line2Configuration = Zero
+    Line2DebounceFactor = 0
+    Line2Inverter = False
+    Line2Mode = Input
+    Line2Status = False
+    Line3Configuration = Zero
+    Line3DebounceFactor = 0
+    Line3DownTo0Status = 0
+    Line3Inverter = False
+    Line3Mode = Input
+    Line3Status = False
+    PacketSize = 1514
+    PG_MaxGranularity = 65535
+    PG_MaxWidth = 65535
+    PixelColorFilter = None
+    PLC_ctrl0 = False
+    PLC_ctrl1 = False
+    PLC_ctrl2 = False
+    PLC_ctrl3 = False
+    PLC_del0_DelayCount = 1
+    PLC_del0_InputSignal = PLC_Q3
+    PLC_del0_ReferenceTimingSignal = PLC_rsl0_out
+    PLC_gp_cnt0_CompareValue = 0
+    PLC_gp_cnt0_DecrementActivation = Off
+    PLC_gp_cnt0_IncrementActivation = Off
+    PLC_gp_cnt0_ResetActivation = Off
+    PLC_gp_cnt0_ResetSource = PLC_Q3
+    PLC_gp_cnt0_Value = 0
+    PLC_I0 = Line0
+    PLC_I1 = Line1
+    PLC_I2 = Line2
+    PLC_I3 = Line3
+    PLC_I4 = PLC_ctrl1
+    PLC_I5 = PLC_ctrl0
+    PLC_I6 = Timer2Out
+    PLC_I7 = Timer1Out
+    PLC_Interrupt_FIFO0_Q10_Enabled = False
+    PLC_Interrupt_FIFO0_Q15_Enabled = True
+    PLC_Interrupt_FIFO0_Q3_Enabled = False
+    PLC_Interrupt_FIFO0_Q7_Enabled = False
+    PLC_pg0_Delay = 1
+    PLC_pg0_GranularityFactor = 2
+    PLC_pg0_PulseFrequency = 499.9600
+    PLC_pg0_PulsePeriod = 2000160
+    PLC_pg0_TriggerActivation = FallingEdge
+    PLC_pg0_TriggerSource = PLC_Q9
+    PLC_pg0_Width = 22222
+    PLC_pg1_Delay = 1
+    PLC_pg1_GranularityFactor = 32
+    PLC_pg1_PulseFrequency = 49.9951
+    PLC_pg1_PulsePeriod = 20001960
+    PLC_pg1_TriggerActivation = FallingEdge
+    PLC_pg1_TriggerSource = PLC_Q8
+    PLC_pg1_Width = 20202
+    PLC_pg2_Delay = 1024
+    PLC_pg2_GranularityFactor = 0
+    PLC_pg2_PulseFrequency = 6.5091e+003
+    PLC_pg2_PulsePeriod = 153630
+    PLC_pg2_TriggerActivation = RisingEdge
+    PLC_pg2_TriggerSource = PLC_Q11
+    PLC_pg2_Width = 4096
+    PLC_pg3_Delay = 1024
+    PLC_pg3_GranularityFactor = 0
+    PLC_pg3_PulseFrequency = 6.5091e+003
+    PLC_pg3_PulsePeriod = 153630
+    PLC_pg3_TriggerActivation = RisingEdge
+    PLC_pg3_TriggerSource = PLC_Q10
+    PLC_pg3_Width = 4096
+    PLC_pg_PulseFrequencyMax = 1.1111e+007
+    PLC_pg_PulseFrequencyMin = 0.0039
+    PLC_pg_PulsePeriodMaxInt = 2.1475e+009
+    PLC_pg_PulsePeriodMinInt = 90
+    PLC_Q0_Configuration = Zero
+    PLC_Q0_Operator0 = Or
+    PLC_Q0_Operator1 = Or
+    PLC_Q0_Operator2 = Or
+    PLC_Q0_Variable0 = Zero
+    PLC_Q0_Variable1 = Zero
+    PLC_Q0_Variable2 = Zero
+    PLC_Q0_Variable3 = Zero
+    PLC_Q10_Operator0 = Or
+    PLC_Q10_Operator1 = Or
+    PLC_Q10_Operator2 = Or
+    PLC_Q10_Variable0 = Zero
+    PLC_Q10_Variable1 = Zero
+    PLC_Q10_Variable2 = Zero
+    PLC_Q10_Variable3 = Zero
+    PLC_Q11_Operator0 = Or
+    PLC_Q11_Operator1 = Or
+    PLC_Q11_Operator2 = Or
+    PLC_Q11_Variable0 = Zero
+    PLC_Q11_Variable1 = Zero
+    PLC_Q11_Variable2 = Zero
+    PLC_Q11_Variable3 = Zero
+    PLC_Q12_Operator0 = Or
+    PLC_Q12_Operator1 = Or
+    PLC_Q12_Operator2 = Or
+    PLC_Q12_Variable0 = Zero
+    PLC_Q12_Variable1 = Zero
+    PLC_Q12_Variable2 = Zero
+    PLC_Q12_Variable3 = Zero
+    PLC_Q13_Operator0 = Or
+    PLC_Q13_Operator1 = Or
+    PLC_Q13_Operator2 = Or
+    PLC_Q13_Variable0 = Zero
+    PLC_Q13_Variable1 = Zero
+    PLC_Q13_Variable2 = Zero
+    PLC_Q13_Variable3 = Zero
+    PLC_Q14_Operator0 = Or
+    PLC_Q14_Operator1 = Or
+    PLC_Q14_Operator2 = Or
+    PLC_Q14_Variable0 = Zero
+    PLC_Q14_Variable1 = Zero
+    PLC_Q14_Variable2 = Zero
+    PLC_Q14_Variable3 = Zero
+    PLC_Q15_Operator0 = Or
+    PLC_Q15_Operator1 = Or
+    PLC_Q15_Operator2 = Or
+    PLC_Q15_Variable0 = Zero
+    PLC_Q15_Variable1 = Zero
+    PLC_Q15_Variable2 = Zero
+    PLC_Q15_Variable3 = Zero
+    PLC_Q16_Operator0 = Or
+    PLC_Q16_Operator1 = Or
+    PLC_Q16_Operator2 = Or
+    PLC_Q16_Variable0 = Zero
+    PLC_Q16_Variable1 = Zero
+    PLC_Q16_Variable2 = Zero
+    PLC_Q16_Variable3 = Zero
+    PLC_Q17_Operator0 = Or
+    PLC_Q17_Operator1 = Or
+    PLC_Q17_Operator2 = Or
+    PLC_Q17_Variable0 = Zero
+    PLC_Q17_Variable1 = Zero
+    PLC_Q17_Variable2 = Zero
+    PLC_Q17_Variable3 = Zero
+    PLC_Q1_Configuration = Zero
+    PLC_Q1_Operator0 = Or
+    PLC_Q1_Operator1 = Or
+    PLC_Q1_Operator2 = Or
+    PLC_Q1_Variable0 = Zero
+    PLC_Q1_Variable1 = Zero
+    PLC_Q1_Variable2 = Zero
+    PLC_Q1_Variable3 = Zero
+    PLC_Q2_Configuration = Zero
+    PLC_Q2_Operator0 = Or
+    PLC_Q2_Operator1 = Or
+    PLC_Q2_Operator2 = Or
+    PLC_Q2_Variable0 = Zero
+    PLC_Q2_Variable1 = Zero
+    PLC_Q2_Variable2 = Zero
+    PLC_Q2_Variable3 = Zero
+    PLC_Q3_Configuration = Zero
+    PLC_Q3_Operator0 = Or
+    PLC_Q3_Operator1 = Or
+    PLC_Q3_Operator2 = Or
+    PLC_Q3_Variable0 = Zero
+    PLC_Q3_Variable1 = Zero
+    PLC_Q3_Variable2 = Zero
+    PLC_Q3_Variable3 = Zero
+    PLC_Q4_Configuration = Zero
+    PLC_Q4_Operator0 = Or
+    PLC_Q4_Operator1 = Or
+    PLC_Q4_Operator2 = Or
+    PLC_Q4_Variable0 = PLC_I7
+    PLC_Q4_Variable1 = PLC_I0
+    PLC_Q4_Variable2 = Zero
+    PLC_Q4_Variable3 = Zero
+    PLC_Q5_Configuration = Zero
+    PLC_Q5_Operator0 = Or
+    PLC_Q5_Operator1 = Or
+    PLC_Q5_Operator2 = Or
+    PLC_Q5_Variable0 = One
+    PLC_Q5_Variable1 = Zero
+    PLC_Q5_Variable2 = Zero
+    PLC_Q5_Variable3 = Zero
+    PLC_Q6_Configuration = Zero
+    PLC_Q6_Operator0 = Or
+    PLC_Q6_Operator1 = Or
+    PLC_Q6_Operator2 = Or
+    PLC_Q6_Variable0 = One
+    PLC_Q6_Variable1 = Zero
+    PLC_Q6_Variable2 = Zero
+    PLC_Q6_Variable3 = Zero
+    PLC_Q7_Configuration = Zero
+    PLC_Q7_Operator0 = Or
+    PLC_Q7_Operator1 = Or
+    PLC_Q7_Operator2 = Or
+    PLC_Q7_Variable0 = One
+    PLC_Q7_Variable1 = Zero
+    PLC_Q7_Variable2 = Zero
+    PLC_Q7_Variable3 = Zero
+    PLC_Q8_Operator0 = Or
+    PLC_Q8_Operator1 = Or
+    PLC_Q8_Operator2 = Or
+    PLC_Q8_Variable0 = PLC_I7
+    PLC_Q8_Variable1 = Zero
+    PLC_Q8_Variable2 = Zero
+    PLC_Q8_Variable3 = Zero
+    PLC_Q9_Operator0 = Or
+    PLC_Q9_Operator1 = Or
+    PLC_Q9_Operator2 = Or
+    PLC_Q9_Variable0 = PLC_I6
+    PLC_Q9_Variable1 = Zero
+    PLC_Q9_Variable2 = Zero
+    PLC_Q9_Variable3 = Zero
+    PLC_rsl0_BackupEnabled = False
+    PLC_rsl0_BackupInputSignal = Timer1Out
+    PLC_rsl0_BackupSwitchoverDelay = 0
+    PLC_rsl0_Divider = 256
+    PLC_rsl0_Granularity = OneSystemClockCycle
+    PLC_rsl0_InputFrequency = 1.0000e-008
+    PLC_rsl0_InputSignal = PLC_Q3
+    PLC_rsl0_Multiplier = FrequencyX256
+    PLC_rsl0_OutputFrequency = 1.0000e-008
+    PLC_rsl0_SampleSize = SixteenBit
+    PLC_rsl0_SignalInPeriod = 65535
+    PLC_rsl_InputFrequencyMax = 3.3333e+007
+    PLC_ts_trig0_Enable = False
+    PLC_ts_trig1_Enable = False
+    PLC_ts_trig2_Enable = False
+    PLC_ts_trig3_Enable = False
+    PLC_ts_trig_CounterSelect = GevTimestampValueLow
+    PLC_ts_trig_FIFOEmpty = True
+    PLC_ts_trig_FIFOFull = False
+    PLC_ts_trig_Time = 0
+    PlcCapabilityRegisterIsImplemented = True
+    PlcDebouncerIsAvailable = True
+    PlcDebouncing0Reserved = 0
+    PlcDebouncing1Reserved = 0
+    PlcFunctionSelectIsAvailable = True
+    PlcGPIO = 0
+    PlcInterruptFifoIsAvailable = True
+    PlcLutCfg1 = 0
+    PlcNumberOfCounters = 1
+    PlcNumberOfDelayers = 1
+    PlcNumberOfPulseGen = 4
+    PlcNumberOfRescalers = 1
+    PlcRslMultiplierWidth = SixteenBit
+    PlcRslWatchdogIsAvailable = True
+    PlcTsTrigIsAvailable = True
+    StartExposureTimer = True
+    TPC_CorrectionData_FileNumber = 96
+    TPC_FirstImage_HighRef = 64
+    TPC_FirstImage_LowRef = 32
+    TPC_OperationMode = Activated
+    TPC_SetValue_HighRef = 48320
+    TPC_SetValue_LowRef = 16528
+    Uart0BaudRate = Baud115200
+    Uart0BaudRateFactor = 16
+    Uart0BreakDetection = False
+    Uart0BreakGeneration = False
+    Uart0Loopback = False
+    Uart0NumOfStopBits = One
+    Uart0Parity = None
+    Uart0ReadyToReceive = False
+    Uart1BaudRate = Baud9600
+    Uart1BaudRateFactor = 16
+    Uart1BreakDetection = False
+    Uart1BreakGeneration = False
+    Uart1Loopback = False
+    Uart1NumOfStopBits = One
+    Uart1Parity = None
+    Uart1ReadyToReceive = False
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    AcquisitionMode: [ {Continuous} | MultiFrame | SingleFrame ]
+    AutoCalibrationInterval
+    AutoCalibrationMode
+    BGC_OffsetValue
+    BGC_OperationMode
+    BinningHorizontal
+    BinningVertical
+    BPC_OperationMode: [ {Activated} | Deactivated | Test ]
+    BulkRxTimeoutCounterValue
+    CorrectionDataSet
+    CounterResetActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    CounterResetSource: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    DarkTime
+    DarkTimeAbs
+    DarkTimeAbsMs
+    DarkTimeGranularity
+    DecimationHorizontal
+    DecimationVertical
+    DeviceUserID
+    ExposureActiveTriggerMode: [ {Off} | On ]
+    ExposureMode: [ {Off} | Timed ]
+    ExposureTime
+    ExposureTimeAbs
+    ExposureTimeAbsMs
+    ExposureTimeGranularity
+    Gain
+    GainRaw
+    GrbCh0AcqCfgIncludeMetadataInImage: [ {False} | True ]
+    GrbCh0AcqCfgInvertPixelData: [ {False} | True ]
+    GrbCh0AcqCfgMemoryWaterLevel: [ {Level75} | Level100 | Level50 | Level87Point5 ]
+    GrbCh0AcqCfgPixelBusDataPortMapping: [ {CBA} | ABC | ACB | BAC | BCA | CAB ]
+    GrbCh0MetadataInsertionMode: [ {FirstFourBytesOfFirstAcquiredLine} | FirstFourBytesOfEveryAcquiredLines ]
+    GrbCh0MetadataMsbOverride: [ {NotOverriden} | PLC_Q0ToPLC_Q7 ]
+    GrbCh0MetadataSourceSelection: [ {BlockID} | GevTimestampValueLow ]
+    GrbCh0TrigCfgAutomaticInternalRetrigger: [ {False} | True ]
+    GrbCh0TrigCfgContinuousPipeCount: [ {Two} | Continuous | One ]
+    GrbCh0TrigCfgFrameToSkip
+    GrbCh0TrigCfgPLCTriggerable: [ {False} | True ]
+    HighSpeedMode: [ {False} | True ]
+    IIS_OperationMode
+    Line0Configuration: [ {Zero} | One | Three | Two ]
+    Line0DebounceFactor
+    Line1Configuration: [ {Zero} | One | Three | Two ]
+    Line1DebounceFactor
+    Line2Configuration: [ {Zero} | One | Three | Two ]
+    Line2DebounceFactor
+    Line3Configuration: [ {Zero} | One | Three | Two ]
+    Line3DebounceFactor
+    PacketSize: [ {1514} | 590 | 4088 | 9014 | 16128 ]
+    PG_MaxGranularity
+    PG_MaxWidth
+    PLC_ctrl0: [ {False} | True ]
+    PLC_ctrl1: [ {False} | True ]
+    PLC_ctrl2: [ {False} | True ]
+    PLC_ctrl3: [ {False} | True ]
+    PLC_del0_DelayCount
+    PLC_del0_InputSignal: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_del0_ReferenceTimingSignal: [ {PLC_rsl0_out} | Timer1Out | Timer2Out | Timer3Out | Timer4Out ]
+    PLC_gp_cnt0_CompareValue
+    PLC_gp_cnt0_DecrementActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_IncrementActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_ResetActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_ResetSource: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_I0: [ {Line0} | Line1 | Line2 | PLC_A4 | PLC_A5 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl2 | PLC_rsl0_out | Timer1Out | Timer2Out ]
+    PLC_I1: [ {Line1} | Line0 | Line3 | PLC_A4 | PLC_A5 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl3 | PLC_rsl0_out | Timer3Out | Timer4Out ]
+    PLC_I2: [ {Line2} | Counter1Eq | Line0 | Line1 | PLC_A4 | PLC_Q2 | PLC_Q6 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl3 | PLC_del0_out | PLC_rsl0_out | Timer1Out | Timer2Out ]
+    PLC_I3: [ {Line3} | Counter1Gt | Line0 | Line1 | PLC_A5 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | Timer3Out | Timer4Out ]
+    PLC_I4: [ {PLC_ctrl1} | Counter1Eq | Line0 | Line1 | Line2 | PLC_A5 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig3 | Timer1Out ]
+    PLC_I5: [ {PLC_ctrl0} | Counter1Gt | Line0 | Line1 | Line3 | PLC_A4 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl3 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig2 | Timer3Out ]
+    PLC_I6: [ {Timer2Out} | Counter1Eq | Line0 | Line1 | PLC_A4 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl1 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig1 | Timer4Out ]
+    PLC_I7: [ {Timer1Out} | Counter1Gt | Line0 | Line1 | Line3 | PLC_A4 | PLC_A5 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ts_trig0 | Timer3Out ]
+    PLC_Interrupt_FIFO0_Q10_Enabled: [ {False} | True ]
+    PLC_Interrupt_FIFO0_Q15_Enabled: [ {True} | False ]
+    PLC_Interrupt_FIFO0_Q3_Enabled: [ {False} | True ]
+    PLC_Interrupt_FIFO0_Q7_Enabled: [ {False} | True ]
+    PLC_pg0_Delay
+    PLC_pg0_GranularityFactor
+    PLC_pg0_TriggerActivation: [ {FallingEdge} | AnyEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_pg0_TriggerSource: [ {PLC_Q9} | Continuous ]
+    PLC_pg0_Width
+    PLC_pg1_Delay
+    PLC_pg1_GranularityFactor
+    PLC_pg1_TriggerActivation: [ {FallingEdge} | AnyEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_pg1_TriggerSource: [ {PLC_Q8} | Continuous ]
+    PLC_pg1_Width
+    PLC_pg2_Delay
+    PLC_pg2_GranularityFactor
+    PLC_pg2_TriggerActivation: [ {RisingEdge} | AnyEdge | FallingEdge | LevelHigh | LevelLow ]
+    PLC_pg2_TriggerSource: [ {PLC_Q11} | Continuous ]
+    PLC_pg2_Width
+    PLC_pg3_Delay
+    PLC_pg3_GranularityFactor
+    PLC_pg3_TriggerActivation: [ {RisingEdge} | AnyEdge | FallingEdge | LevelHigh | LevelLow ]
+    PLC_pg3_TriggerSource: [ {PLC_Q10} | Continuous ]
+    PLC_pg3_Width
+    PLC_Q0_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q0_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q0_Operator1: [ {Or} | And | Xor ]
+    PLC_Q0_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q0_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q10_Operator1: [ {Or} | And | Xor ]
+    PLC_Q10_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q10_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q11_Operator1: [ {Or} | And | Xor ]
+    PLC_Q11_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q11_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q12_Operator1: [ {Or} | And | Xor ]
+    PLC_Q12_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q12_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q13_Operator1: [ {Or} | And | Xor ]
+    PLC_Q13_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q13_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q14_Operator1: [ {Or} | And | Xor ]
+    PLC_Q14_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q14_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q15_Operator1: [ {Or} | And | Xor ]
+    PLC_Q15_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q15_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q16_Operator1: [ {Or} | And | Xor ]
+    PLC_Q16_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q16_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q17_Operator1: [ {Or} | And | Xor ]
+    PLC_Q17_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q17_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q1_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q1_Operator1: [ {Or} | And | Xor ]
+    PLC_Q1_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q1_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q2_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q2_Operator1: [ {Or} | And | Xor ]
+    PLC_Q2_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q2_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q3_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q3_Operator1: [ {Or} | And | Xor ]
+    PLC_Q3_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q3_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q4_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q4_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q4_Operator1: [ {Or} | And | Xor ]
+    PLC_Q4_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q4_Variable0: [ {PLC_I7} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7_Not | Zero ]
+    PLC_Q4_Variable1: [ {PLC_I0} | One | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q4_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q4_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q5_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q5_Operator1: [ {Or} | And | Xor ]
+    PLC_Q5_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q5_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q5_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q6_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q6_Operator1: [ {Or} | And | Xor ]
+    PLC_Q6_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q6_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q6_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q7_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q7_Operator1: [ {Or} | And | Xor ]
+    PLC_Q7_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q7_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q7_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q8_Operator1: [ {Or} | And | Xor ]
+    PLC_Q8_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q8_Variable0: [ {PLC_I7} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7_Not | Zero ]
+    PLC_Q8_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q9_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q9_Operator1: [ {Or} | And | Xor ]
+    PLC_Q9_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q9_Variable0: [ {PLC_I6} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q9_Variable1: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | StartTimer | Zero ]
+    PLC_Q9_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q9_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_rsl0_BackupEnabled: [ {False} | True ]
+    PLC_rsl0_BackupInputSignal: [ {Timer1Out} | Timer2Out | Timer3Out | Timer4Out ]
+    PLC_rsl0_BackupSwitchoverDelay
+    PLC_rsl0_Divider
+    PLC_rsl0_Granularity: [ {OneSystemClockCycle} | FourSystemClockCycles | SixteenSystemClockCycles | TwoFiftySixSystemClockCycles ]
+    PLC_rsl0_InputSignal: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_rsl0_Multiplier: [ {FrequencyX256} | FrequencyX16 | FrequencyX4096 ]
+    PLC_ts_trig0_Enable: [ {False} | True ]
+    PLC_ts_trig1_Enable: [ {False} | True ]
+    PLC_ts_trig2_Enable: [ {False} | True ]
+    PLC_ts_trig3_Enable: [ {False} | True ]
+    PLC_ts_trig_CounterSelect: [ {GevTimestampValueLow} | Counter1 ]
+    PLC_ts_trig_Time
+    PlcDebouncing0Reserved
+    PlcDebouncing1Reserved
+    PlcGPIO
+    PlcLutCfg1
+    StartExposureTimer: [ {False} | True ]
+    TPC_OperationMode: [ {Activated} | Deactivated | Deactivated_Test_A | Deactivated_Test_B | OnePointCorrection_Mode_A | OnePointCorrection_Mode_B ]
+    Uart0BaudRate: [ {Baud115200} | Baud14400 | Baud19200 | Baud28800 | Baud38400 | Baud57600 | Baud9600 | Programmable ]
+    Uart0BaudRateFactor
+    Uart0BreakDetection: [ {False} | True ]
+    Uart0BreakGeneration: [ {False} | True ]
+    Uart0Loopback: [ {False} | True ]
+    Uart0NumOfStopBits: [ {One} | Two ]
+    Uart0Parity: [ {None} | Even | Odd ]
+    Uart0ReadyToReceive: [ {False} | True ]
+    Uart1BaudRate: [ {Baud9600} | Baud115200 | Baud14400 | Baud19200 | Baud28800 | Baud38400 | Baud57600 | Programmable ]
+    Uart1BaudRateFactor
+    Uart1BreakDetection: [ {False} | True ]
+    Uart1BreakGeneration: [ {False} | True ]
+    Uart1Loopback: [ {False} | True ]
+    Uart1NumOfStopBits: [ {One} | Two ]
+    Uart1Parity: [ {None} | Even | Odd ]
+    Uart1ReadyToReceive: [ {False} | True ]
+
+
+----------VIDEOINPUT OBJECT CREATION - AVTMATLABADAPTOR64_R2009B----------
+
+
+----------VIDEOINPUT OBJECT CREATION - GIGE----------
+
+videoinput('gige', 1, 'Mono12')--SUCCEEDED
+	Adaptor Name: gige
+	Device Name: Goldeye P-008 SWIR
+	Max Height: 256
+	Max Width: 320
+	Native Data Type: uint16
+	Total Sources: 1
+	Vendor Driver Description: Image Acquisition Toolbox GigE Vision Adaptor
+	Vendor Driver Version: 1.1
+
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    AcquisitionMode = Continuous
+    AutoCalibrationInterval = 0
+    AutoCalibrationMode = 1
+    BGC_OffsetValue = 0
+    BGC_OperationMode = 0
+    BinningHorizontal = 1
+    BinningVertical = 1
+    BPC_CorrectionData_FileNumber = 112
+    BPC_OperationMode = Activated
+    BulkRxTimeoutCounterValue = 10000
+    CorrectionDataSet = 5
+    CounterResetActivation = Off
+    CounterResetSource = PLC_Q3
+    DarkTime = 2.0000e+004
+    DarkTime_Max = 64879
+    DarkTime_Min = 990
+    DarkTimeAbs = 2.0000e+004
+    DarkTimeAbsMs = 19
+    DarkTimeGranularity = 32
+    DecimationHorizontal = 1
+    DecimationVertical = 1
+    DeviceID = 09000002
+    DeviceManufacturerInfo = Germany  (00080602)
+    DeviceModelName = Goldeye P-008 SWIR
+    DeviceScanType = Areascan
+    DeviceUserID = 5í
+    DeviceVendorName = Allied Vision Technologies GmbH
+    DeviceVersion = 3.1.0  (02.05.05)2)
+    ExposureActiveTriggerMode = Off
+    ExposureMode = Timed
+    ExposureTime = 2.0000e+003
+    ExposureTime_Max = 5898
+    ExposureTime_Min = 90
+    ExposureTimeAbs = 2.0000e+003
+    ExposureTimeAbsMs = 1
+    ExposureTimeGranularity = 2
+    Gain = 1
+    GainRaw = 1
+    GrbCh0AcqCfgIncludeMetadataInImage = False
+    GrbCh0AcqCfgInvertPixelData = False
+    GrbCh0AcqCfgMemoryWaterLevel = Level75
+    GrbCh0AcqCfgPixelBusDataPortMapping = CBA
+    GrbCh0MetadataInsertionMode = FirstFourBytesOfFirstAcquiredLine
+    GrbCh0MetadataMsbOverride = NotOverriden
+    GrbCh0MetadataSourceSelection = BlockID
+    GrbCh0TrigCfgAutomaticInternalRetrigger = False
+    GrbCh0TrigCfgContinuousPipeCount = Two
+    GrbCh0TrigCfgFrameToSkip = 0
+    GrbCh0TrigCfgPLCTriggerable = False
+    HighSpeedMode = False
+    IIS_OperationMode = 0
+    IPEngineBulk0I2cEnable = True
+    IPEngineBulk0UartEnable = True
+    IPEngineBulk0UsrtEnable = True
+    IPEngineBulkUsrt0BreakDetection = True
+    IPEngineDeviceID = 8
+    IPEngineFirmwareVersionMajor = 2
+    IPEngineFirmwareVersionMinor = 5
+    IPEngineFirmwareVersionSubminor = 5
+    IPEngineGrbPreProcessorDataInvertDisabled = False
+    IPEngineGrbPreProcessorDataShiftDisabled = False
+    IPEngineGrbPreProcessorPortMapDisabled = False
+    IPEngineInitSequenceStatus = 2
+    IPEngineModuleID = 6
+    IPEngineNumberOfBulkInterfaces = 2
+    IPEngineNumberOfUARTInterfaces = 2
+    IPEngineNumberOfUserSetsSupported = OneUserSet
+    IPEngineStaticCfgIsSupported = True
+    IPEngineSubModuleID = 2
+    IPEngineUseAnalogFeatures = False
+    IPEngineUsePlayback = False
+    IPEngineUserSetsStatusReporting = True
+    IPEngineUseUart0BreakDetection = True
+    IPEngineUseUart0BreakGeneration = True
+    IPEngineUseUart1BreakDetection = True
+    IPEngineUseUart1BreakGeneration = True
+    IPEngineUseWrapAround = False
+    IPEngineVendorID = 0
+    Line0Configuration = Zero
+    Line0DebounceFactor = 0
+    Line0Inverter = False
+    Line0Mode = Input
+    Line0Status = False
+    Line1Configuration = Zero
+    Line1DebounceFactor = 0
+    Line1Inverter = False
+    Line1Mode = Input
+    Line1Status = False
+    Line2Configuration = Zero
+    Line2DebounceFactor = 0
+    Line2Inverter = False
+    Line2Mode = Input
+    Line2Status = False
+    Line3Configuration = Zero
+    Line3DebounceFactor = 0
+    Line3DownTo0Status = 0
+    Line3Inverter = False
+    Line3Mode = Input
+    Line3Status = False
+    PacketSize = 1514
+    PG_MaxGranularity = 65535
+    PG_MaxWidth = 65535
+    PixelColorFilter = None
+    PLC_ctrl0 = False
+    PLC_ctrl1 = False
+    PLC_ctrl2 = False
+    PLC_ctrl3 = False
+    PLC_del0_DelayCount = 1
+    PLC_del0_InputSignal = PLC_Q3
+    PLC_del0_ReferenceTimingSignal = PLC_rsl0_out
+    PLC_gp_cnt0_CompareValue = 0
+    PLC_gp_cnt0_DecrementActivation = Off
+    PLC_gp_cnt0_IncrementActivation = Off
+    PLC_gp_cnt0_ResetActivation = Off
+    PLC_gp_cnt0_ResetSource = PLC_Q3
+    PLC_gp_cnt0_Value = 0
+    PLC_I0 = Line0
+    PLC_I1 = Line1
+    PLC_I2 = Line2
+    PLC_I3 = Line3
+    PLC_I4 = PLC_ctrl1
+    PLC_I5 = PLC_ctrl0
+    PLC_I6 = Timer2Out
+    PLC_I7 = Timer1Out
+    PLC_Interrupt_FIFO0_Q10_Enabled = False
+    PLC_Interrupt_FIFO0_Q15_Enabled = True
+    PLC_Interrupt_FIFO0_Q3_Enabled = False
+    PLC_Interrupt_FIFO0_Q7_Enabled = False
+    PLC_pg0_Delay = 1
+    PLC_pg0_GranularityFactor = 2
+    PLC_pg0_PulseFrequency = 499.9600
+    PLC_pg0_PulsePeriod = 2000160
+    PLC_pg0_TriggerActivation = FallingEdge
+    PLC_pg0_TriggerSource = PLC_Q9
+    PLC_pg0_Width = 22222
+    PLC_pg1_Delay = 1
+    PLC_pg1_GranularityFactor = 32
+    PLC_pg1_PulseFrequency = 49.9951
+    PLC_pg1_PulsePeriod = 20001960
+    PLC_pg1_TriggerActivation = FallingEdge
+    PLC_pg1_TriggerSource = PLC_Q8
+    PLC_pg1_Width = 20202
+    PLC_pg2_Delay = 1024
+    PLC_pg2_GranularityFactor = 0
+    PLC_pg2_PulseFrequency = 6.5091e+003
+    PLC_pg2_PulsePeriod = 153630
+    PLC_pg2_TriggerActivation = RisingEdge
+    PLC_pg2_TriggerSource = PLC_Q11
+    PLC_pg2_Width = 4096
+    PLC_pg3_Delay = 1024
+    PLC_pg3_GranularityFactor = 0
+    PLC_pg3_PulseFrequency = 6.5091e+003
+    PLC_pg3_PulsePeriod = 153630
+    PLC_pg3_TriggerActivation = RisingEdge
+    PLC_pg3_TriggerSource = PLC_Q10
+    PLC_pg3_Width = 4096
+    PLC_pg_PulseFrequencyMax = 1.1111e+007
+    PLC_pg_PulseFrequencyMin = 0.0039
+    PLC_pg_PulsePeriodMaxInt = 2.1475e+009
+    PLC_pg_PulsePeriodMinInt = 90
+    PLC_Q0_Configuration = Zero
+    PLC_Q0_Operator0 = Or
+    PLC_Q0_Operator1 = Or
+    PLC_Q0_Operator2 = Or
+    PLC_Q0_Variable0 = Zero
+    PLC_Q0_Variable1 = Zero
+    PLC_Q0_Variable2 = Zero
+    PLC_Q0_Variable3 = Zero
+    PLC_Q10_Operator0 = Or
+    PLC_Q10_Operator1 = Or
+    PLC_Q10_Operator2 = Or
+    PLC_Q10_Variable0 = Zero
+    PLC_Q10_Variable1 = Zero
+    PLC_Q10_Variable2 = Zero
+    PLC_Q10_Variable3 = Zero
+    PLC_Q11_Operator0 = Or
+    PLC_Q11_Operator1 = Or
+    PLC_Q11_Operator2 = Or
+    PLC_Q11_Variable0 = Zero
+    PLC_Q11_Variable1 = Zero
+    PLC_Q11_Variable2 = Zero
+    PLC_Q11_Variable3 = Zero
+    PLC_Q12_Operator0 = Or
+    PLC_Q12_Operator1 = Or
+    PLC_Q12_Operator2 = Or
+    PLC_Q12_Variable0 = Zero
+    PLC_Q12_Variable1 = Zero
+    PLC_Q12_Variable2 = Zero
+    PLC_Q12_Variable3 = Zero
+    PLC_Q13_Operator0 = Or
+    PLC_Q13_Operator1 = Or
+    PLC_Q13_Operator2 = Or
+    PLC_Q13_Variable0 = Zero
+    PLC_Q13_Variable1 = Zero
+    PLC_Q13_Variable2 = Zero
+    PLC_Q13_Variable3 = Zero
+    PLC_Q14_Operator0 = Or
+    PLC_Q14_Operator1 = Or
+    PLC_Q14_Operator2 = Or
+    PLC_Q14_Variable0 = Zero
+    PLC_Q14_Variable1 = Zero
+    PLC_Q14_Variable2 = Zero
+    PLC_Q14_Variable3 = Zero
+    PLC_Q15_Operator0 = Or
+    PLC_Q15_Operator1 = Or
+    PLC_Q15_Operator2 = Or
+    PLC_Q15_Variable0 = Zero
+    PLC_Q15_Variable1 = Zero
+    PLC_Q15_Variable2 = Zero
+    PLC_Q15_Variable3 = Zero
+    PLC_Q16_Operator0 = Or
+    PLC_Q16_Operator1 = Or
+    PLC_Q16_Operator2 = Or
+    PLC_Q16_Variable0 = Zero
+    PLC_Q16_Variable1 = Zero
+    PLC_Q16_Variable2 = Zero
+    PLC_Q16_Variable3 = Zero
+    PLC_Q17_Operator0 = Or
+    PLC_Q17_Operator1 = Or
+    PLC_Q17_Operator2 = Or
+    PLC_Q17_Variable0 = Zero
+    PLC_Q17_Variable1 = Zero
+    PLC_Q17_Variable2 = Zero
+    PLC_Q17_Variable3 = Zero
+    PLC_Q1_Configuration = Zero
+    PLC_Q1_Operator0 = Or
+    PLC_Q1_Operator1 = Or
+    PLC_Q1_Operator2 = Or
+    PLC_Q1_Variable0 = Zero
+    PLC_Q1_Variable1 = Zero
+    PLC_Q1_Variable2 = Zero
+    PLC_Q1_Variable3 = Zero
+    PLC_Q2_Configuration = Zero
+    PLC_Q2_Operator0 = Or
+    PLC_Q2_Operator1 = Or
+    PLC_Q2_Operator2 = Or
+    PLC_Q2_Variable0 = Zero
+    PLC_Q2_Variable1 = Zero
+    PLC_Q2_Variable2 = Zero
+    PLC_Q2_Variable3 = Zero
+    PLC_Q3_Configuration = Zero
+    PLC_Q3_Operator0 = Or
+    PLC_Q3_Operator1 = Or
+    PLC_Q3_Operator2 = Or
+    PLC_Q3_Variable0 = Zero
+    PLC_Q3_Variable1 = Zero
+    PLC_Q3_Variable2 = Zero
+    PLC_Q3_Variable3 = Zero
+    PLC_Q4_Configuration = Zero
+    PLC_Q4_Operator0 = Or
+    PLC_Q4_Operator1 = Or
+    PLC_Q4_Operator2 = Or
+    PLC_Q4_Variable0 = PLC_I7
+    PLC_Q4_Variable1 = PLC_I0
+    PLC_Q4_Variable2 = Zero
+    PLC_Q4_Variable3 = Zero
+    PLC_Q5_Configuration = Zero
+    PLC_Q5_Operator0 = Or
+    PLC_Q5_Operator1 = Or
+    PLC_Q5_Operator2 = Or
+    PLC_Q5_Variable0 = One
+    PLC_Q5_Variable1 = Zero
+    PLC_Q5_Variable2 = Zero
+    PLC_Q5_Variable3 = Zero
+    PLC_Q6_Configuration = Zero
+    PLC_Q6_Operator0 = Or
+    PLC_Q6_Operator1 = Or
+    PLC_Q6_Operator2 = Or
+    PLC_Q6_Variable0 = One
+    PLC_Q6_Variable1 = Zero
+    PLC_Q6_Variable2 = Zero
+    PLC_Q6_Variable3 = Zero
+    PLC_Q7_Configuration = Zero
+    PLC_Q7_Operator0 = Or
+    PLC_Q7_Operator1 = Or
+    PLC_Q7_Operator2 = Or
+    PLC_Q7_Variable0 = One
+    PLC_Q7_Variable1 = Zero
+    PLC_Q7_Variable2 = Zero
+    PLC_Q7_Variable3 = Zero
+    PLC_Q8_Operator0 = Or
+    PLC_Q8_Operator1 = Or
+    PLC_Q8_Operator2 = Or
+    PLC_Q8_Variable0 = PLC_I7
+    PLC_Q8_Variable1 = Zero
+    PLC_Q8_Variable2 = Zero
+    PLC_Q8_Variable3 = Zero
+    PLC_Q9_Operator0 = Or
+    PLC_Q9_Operator1 = Or
+    PLC_Q9_Operator2 = Or
+    PLC_Q9_Variable0 = PLC_I6
+    PLC_Q9_Variable1 = Zero
+    PLC_Q9_Variable2 = Zero
+    PLC_Q9_Variable3 = Zero
+    PLC_rsl0_BackupEnabled = False
+    PLC_rsl0_BackupInputSignal = Timer1Out
+    PLC_rsl0_BackupSwitchoverDelay = 0
+    PLC_rsl0_Divider = 256
+    PLC_rsl0_Granularity = OneSystemClockCycle
+    PLC_rsl0_InputFrequency = 1.0000e-008
+    PLC_rsl0_InputSignal = PLC_Q3
+    PLC_rsl0_Multiplier = FrequencyX256
+    PLC_rsl0_OutputFrequency = 1.0000e-008
+    PLC_rsl0_SampleSize = SixteenBit
+    PLC_rsl0_SignalInPeriod = 65535
+    PLC_rsl_InputFrequencyMax = 3.3333e+007
+    PLC_ts_trig0_Enable = False
+    PLC_ts_trig1_Enable = False
+    PLC_ts_trig2_Enable = False
+    PLC_ts_trig3_Enable = False
+    PLC_ts_trig_CounterSelect = GevTimestampValueLow
+    PLC_ts_trig_FIFOEmpty = True
+    PLC_ts_trig_FIFOFull = False
+    PLC_ts_trig_Time = 0
+    PlcCapabilityRegisterIsImplemented = True
+    PlcDebouncerIsAvailable = True
+    PlcDebouncing0Reserved = 0
+    PlcDebouncing1Reserved = 0
+    PlcFunctionSelectIsAvailable = True
+    PlcGPIO = 0
+    PlcInterruptFifoIsAvailable = True
+    PlcLutCfg1 = 0
+    PlcNumberOfCounters = 1
+    PlcNumberOfDelayers = 1
+    PlcNumberOfPulseGen = 4
+    PlcNumberOfRescalers = 1
+    PlcRslMultiplierWidth = SixteenBit
+    PlcRslWatchdogIsAvailable = True
+    PlcTsTrigIsAvailable = True
+    StartExposureTimer = True
+    TPC_CorrectionData_FileNumber = 96
+    TPC_FirstImage_HighRef = 64
+    TPC_FirstImage_LowRef = 32
+    TPC_OperationMode = Activated
+    TPC_SetValue_HighRef = 48320
+    TPC_SetValue_LowRef = 16528
+    Uart0BaudRate = Baud115200
+    Uart0BaudRateFactor = 16
+    Uart0BreakDetection = False
+    Uart0BreakGeneration = False
+    Uart0Loopback = False
+    Uart0NumOfStopBits = One
+    Uart0Parity = None
+    Uart0ReadyToReceive = False
+    Uart1BaudRate = Baud9600
+    Uart1BaudRateFactor = 16
+    Uart1BreakDetection = False
+    Uart1BreakGeneration = False
+    Uart1Loopback = False
+    Uart1NumOfStopBits = One
+    Uart1Parity = None
+    Uart1ReadyToReceive = False
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    AcquisitionMode: [ {Continuous} | MultiFrame | SingleFrame ]
+    AutoCalibrationInterval
+    AutoCalibrationMode
+    BGC_OffsetValue
+    BGC_OperationMode
+    BinningHorizontal
+    BinningVertical
+    BPC_OperationMode: [ {Activated} | Deactivated | Test ]
+    BulkRxTimeoutCounterValue
+    CorrectionDataSet
+    CounterResetActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    CounterResetSource: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    DarkTime
+    DarkTimeAbs
+    DarkTimeAbsMs
+    DarkTimeGranularity
+    DecimationHorizontal
+    DecimationVertical
+    DeviceUserID
+    ExposureActiveTriggerMode: [ {Off} | On ]
+    ExposureMode: [ {Off} | Timed ]
+    ExposureTime
+    ExposureTimeAbs
+    ExposureTimeAbsMs
+    ExposureTimeGranularity
+    Gain
+    GainRaw
+    GrbCh0AcqCfgIncludeMetadataInImage: [ {False} | True ]
+    GrbCh0AcqCfgInvertPixelData: [ {False} | True ]
+    GrbCh0AcqCfgMemoryWaterLevel: [ {Level75} | Level100 | Level50 | Level87Point5 ]
+    GrbCh0AcqCfgPixelBusDataPortMapping: [ {CBA} | ABC | ACB | BAC | BCA | CAB ]
+    GrbCh0MetadataInsertionMode: [ {FirstFourBytesOfFirstAcquiredLine} | FirstFourBytesOfEveryAcquiredLines ]
+    GrbCh0MetadataMsbOverride: [ {NotOverriden} | PLC_Q0ToPLC_Q7 ]
+    GrbCh0MetadataSourceSelection: [ {BlockID} | GevTimestampValueLow ]
+    GrbCh0TrigCfgAutomaticInternalRetrigger: [ {False} | True ]
+    GrbCh0TrigCfgContinuousPipeCount: [ {Two} | Continuous | One ]
+    GrbCh0TrigCfgFrameToSkip
+    GrbCh0TrigCfgPLCTriggerable: [ {False} | True ]
+    HighSpeedMode: [ {False} | True ]
+    IIS_OperationMode
+    Line0Configuration: [ {Zero} | One | Three | Two ]
+    Line0DebounceFactor
+    Line1Configuration: [ {Zero} | One | Three | Two ]
+    Line1DebounceFactor
+    Line2Configuration: [ {Zero} | One | Three | Two ]
+    Line2DebounceFactor
+    Line3Configuration: [ {Zero} | One | Three | Two ]
+    Line3DebounceFactor
+    PacketSize: [ {1514} | 590 | 4088 | 9014 | 16128 ]
+    PG_MaxGranularity
+    PG_MaxWidth
+    PLC_ctrl0: [ {False} | True ]
+    PLC_ctrl1: [ {False} | True ]
+    PLC_ctrl2: [ {False} | True ]
+    PLC_ctrl3: [ {False} | True ]
+    PLC_del0_DelayCount
+    PLC_del0_InputSignal: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_del0_ReferenceTimingSignal: [ {PLC_rsl0_out} | Timer1Out | Timer2Out | Timer3Out | Timer4Out ]
+    PLC_gp_cnt0_CompareValue
+    PLC_gp_cnt0_DecrementActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_IncrementActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_ResetActivation: [ {Off} | AnyEdge | FallingEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_gp_cnt0_ResetSource: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_I0: [ {Line0} | Line1 | Line2 | PLC_A4 | PLC_A5 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl2 | PLC_rsl0_out | Timer1Out | Timer2Out ]
+    PLC_I1: [ {Line1} | Line0 | Line3 | PLC_A4 | PLC_A5 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl3 | PLC_rsl0_out | Timer3Out | Timer4Out ]
+    PLC_I2: [ {Line2} | Counter1Eq | Line0 | Line1 | PLC_A4 | PLC_Q2 | PLC_Q6 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl3 | PLC_del0_out | PLC_rsl0_out | Timer1Out | Timer2Out ]
+    PLC_I3: [ {Line3} | Counter1Gt | Line0 | Line1 | PLC_A5 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | Timer3Out | Timer4Out ]
+    PLC_I4: [ {PLC_ctrl1} | Counter1Eq | Line0 | Line1 | Line2 | PLC_A5 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig3 | Timer1Out ]
+    PLC_I5: [ {PLC_ctrl0} | Counter1Gt | Line0 | Line1 | Line3 | PLC_A4 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl3 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig2 | Timer3Out ]
+    PLC_I6: [ {Timer2Out} | Counter1Eq | Line0 | Line1 | PLC_A4 | PLC_A6 | PLC_Q2 | PLC_Q6 | PLC_ctrl1 | PLC_ctrl2 | PLC_del0_out | PLC_rsl0_out | PLC_ts_trig1 | Timer4Out ]
+    PLC_I7: [ {Timer1Out} | Counter1Gt | Line0 | Line1 | Line3 | PLC_A4 | PLC_A5 | PLC_A7 | PLC_Q3 | PLC_Q7 | PLC_ctrl0 | PLC_ctrl1 | PLC_ts_trig0 | Timer3Out ]
+    PLC_Interrupt_FIFO0_Q10_Enabled: [ {False} | True ]
+    PLC_Interrupt_FIFO0_Q15_Enabled: [ {True} | False ]
+    PLC_Interrupt_FIFO0_Q3_Enabled: [ {False} | True ]
+    PLC_Interrupt_FIFO0_Q7_Enabled: [ {False} | True ]
+    PLC_pg0_Delay
+    PLC_pg0_GranularityFactor
+    PLC_pg0_TriggerActivation: [ {FallingEdge} | AnyEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_pg0_TriggerSource: [ {PLC_Q9} | Continuous ]
+    PLC_pg0_Width
+    PLC_pg1_Delay
+    PLC_pg1_GranularityFactor
+    PLC_pg1_TriggerActivation: [ {FallingEdge} | AnyEdge | LevelHigh | LevelLow | RisingEdge ]
+    PLC_pg1_TriggerSource: [ {PLC_Q8} | Continuous ]
+    PLC_pg1_Width
+    PLC_pg2_Delay
+    PLC_pg2_GranularityFactor
+    PLC_pg2_TriggerActivation: [ {RisingEdge} | AnyEdge | FallingEdge | LevelHigh | LevelLow ]
+    PLC_pg2_TriggerSource: [ {PLC_Q11} | Continuous ]
+    PLC_pg2_Width
+    PLC_pg3_Delay
+    PLC_pg3_GranularityFactor
+    PLC_pg3_TriggerActivation: [ {RisingEdge} | AnyEdge | FallingEdge | LevelHigh | LevelLow ]
+    PLC_pg3_TriggerSource: [ {PLC_Q10} | Continuous ]
+    PLC_pg3_Width
+    PLC_Q0_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q0_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q0_Operator1: [ {Or} | And | Xor ]
+    PLC_Q0_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q0_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q0_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q10_Operator1: [ {Or} | And | Xor ]
+    PLC_Q10_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q10_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q10_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q11_Operator1: [ {Or} | And | Xor ]
+    PLC_Q11_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q11_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q11_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q12_Operator1: [ {Or} | And | Xor ]
+    PLC_Q12_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q12_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q12_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q13_Operator1: [ {Or} | And | Xor ]
+    PLC_Q13_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q13_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q13_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q14_Operator1: [ {Or} | And | Xor ]
+    PLC_Q14_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q14_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q14_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q15_Operator1: [ {Or} | And | Xor ]
+    PLC_Q15_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q15_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q15_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q16_Operator1: [ {Or} | And | Xor ]
+    PLC_Q16_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q16_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q16_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q17_Operator1: [ {Or} | And | Xor ]
+    PLC_Q17_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q17_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q17_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q1_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q1_Operator1: [ {Or} | And | Xor ]
+    PLC_Q1_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q1_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q1_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q2_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q2_Operator1: [ {Or} | And | Xor ]
+    PLC_Q2_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q2_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q2_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q3_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q3_Operator1: [ {Or} | And | Xor ]
+    PLC_Q3_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q3_Variable0: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q3_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q4_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q4_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q4_Operator1: [ {Or} | And | Xor ]
+    PLC_Q4_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q4_Variable0: [ {PLC_I7} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7_Not | Zero ]
+    PLC_Q4_Variable1: [ {PLC_I0} | One | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q4_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q4_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q5_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q5_Operator1: [ {Or} | And | Xor ]
+    PLC_Q5_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q5_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q5_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q5_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q6_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q6_Operator1: [ {Or} | And | Xor ]
+    PLC_Q6_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q6_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q6_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q6_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Configuration: [ {Zero} | One | Three | Two ]
+    PLC_Q7_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q7_Operator1: [ {Or} | And | Xor ]
+    PLC_Q7_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q7_Variable0: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q7_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q7_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q8_Operator1: [ {Or} | And | Xor ]
+    PLC_Q8_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q8_Variable0: [ {PLC_I7} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7_Not | Zero ]
+    PLC_Q8_Variable1: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q8_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q9_Operator0: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q9_Operator1: [ {Or} | And | Xor ]
+    PLC_Q9_Operator2: [ {Or} | And | AndParenthesis | OrParenthesis | Xor | XorParenthesis ]
+    PLC_Q9_Variable0: [ {PLC_I6} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6_Not | PLC_I7 | PLC_I7_Not | Zero ]
+    PLC_Q9_Variable1: [ {One} | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not | StartTimer | Zero ]
+    PLC_Q9_Variable2: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_Q9_Variable3: [ {Zero} | One | PLC_I0 | PLC_I0_Not | PLC_I1 | PLC_I1_Not | PLC_I2 | PLC_I2_Not | PLC_I3 | PLC_I3_Not | PLC_I4 | PLC_I4_Not | PLC_I5 | PLC_I5_Not | PLC_I6 | PLC_I6_Not | PLC_I7 | PLC_I7_Not ]
+    PLC_rsl0_BackupEnabled: [ {False} | True ]
+    PLC_rsl0_BackupInputSignal: [ {Timer1Out} | Timer2Out | Timer3Out | Timer4Out ]
+    PLC_rsl0_BackupSwitchoverDelay
+    PLC_rsl0_Divider
+    PLC_rsl0_Granularity: [ {OneSystemClockCycle} | FourSystemClockCycles | SixteenSystemClockCycles | TwoFiftySixSystemClockCycles ]
+    PLC_rsl0_InputSignal: [ {PLC_Q3} | PLC_Q10 | PLC_Q11 | PLC_Q16 | PLC_Q17 | PLC_Q7 | PLC_Q8 | PLC_Q9 ]
+    PLC_rsl0_Multiplier: [ {FrequencyX256} | FrequencyX16 | FrequencyX4096 ]
+    PLC_ts_trig0_Enable: [ {False} | True ]
+    PLC_ts_trig1_Enable: [ {False} | True ]
+    PLC_ts_trig2_Enable: [ {False} | True ]
+    PLC_ts_trig3_Enable: [ {False} | True ]
+    PLC_ts_trig_CounterSelect: [ {GevTimestampValueLow} | Counter1 ]
+    PLC_ts_trig_Time
+    PlcDebouncing0Reserved
+    PlcDebouncing1Reserved
+    PlcGPIO
+    PlcLutCfg1
+    StartExposureTimer: [ {False} | True ]
+    TPC_OperationMode: [ {Activated} | Deactivated | Deactivated_Test_A | Deactivated_Test_B | OnePointCorrection_Mode_A | OnePointCorrection_Mode_B ]
+    Uart0BaudRate: [ {Baud115200} | Baud14400 | Baud19200 | Baud28800 | Baud38400 | Baud57600 | Baud9600 | Programmable ]
+    Uart0BaudRateFactor
+    Uart0BreakDetection: [ {False} | True ]
+    Uart0BreakGeneration: [ {False} | True ]
+    Uart0Loopback: [ {False} | True ]
+    Uart0NumOfStopBits: [ {One} | Two ]
+    Uart0Parity: [ {None} | Even | Odd ]
+    Uart0ReadyToReceive: [ {False} | True ]
+    Uart1BaudRate: [ {Baud9600} | Baud115200 | Baud14400 | Baud19200 | Baud28800 | Baud38400 | Baud57600 | Programmable ]
+    Uart1BaudRateFactor
+    Uart1BreakDetection: [ {False} | True ]
+    Uart1BreakGeneration: [ {False} | True ]
+    Uart1Loopback: [ {False} | True ]
+    Uart1NumOfStopBits: [ {One} | Two ]
+    Uart1Parity: [ {None} | Even | Odd ]
+    Uart1ReadyToReceive: [ {False} | True ]
+
+
+----------VIDEOINPUT OBJECT CREATION - MATROX----------
+
+
+----------VIDEOINPUT OBJECT CREATION - WINVIDEO----------
+
+videoinput('winvideo', 1, 'YUY2_1280x1024')--SUCCEEDED
+	Adaptor Name: winvideo
+	Device Name: 1.3M HD WebCam
+	Max Height: 1024
+	Max Width: 1280
+	Native Data Type: uint8
+	Total Sources: 1
+	Vendor Driver Description: Windows WDM Compatible Driver
+	Vendor Driver Version: DirectX 9.0
+
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 5.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {5.0000} ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+videoinput('winvideo', 1, 'YUY2_1280x720')--SUCCEEDED
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 10.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {10.0000} ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+videoinput('winvideo', 1, 'YUY2_1280x800')--SUCCEEDED
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 10.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {10.0000} ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+videoinput('winvideo', 1, 'YUY2_160x120')--SUCCEEDED
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 30.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {30.0000} | 15.0000 ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+videoinput('winvideo', 1, 'YUY2_176x144')--SUCCEEDED
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 30.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {30.0000} | 15.0000 ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+videoinput('winvideo', 1, 'YUY2_320x240')--SUCCEEDED
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 30.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {30.0000} | 15.0000 ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+videoinput('winvideo', 1, 'YUY2_352x288')--SUCCEEDED
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 30.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {30.0000} | 15.0000 ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+videoinput('winvideo', 1, 'YUY2_640x480')--SUCCEEDED
+Current device specific property settings (using GET)
+  General Settings:
+    Parent = [1x1 videoinput]
+    Selected = on
+    SourceName = input1
+    Tag = 
+    Type = videosource
+
+  Device Specific Properties:
+    BacklightCompensation = on
+    Brightness = 0
+    Contrast = 0
+    FrameRate = 30.0000
+    Gamma = 100
+    Hue = 0
+    Saturation = 43
+    Sharpness = 2
+
+Available device specific property settings (using SET)
+  General Settings:
+    Tag
+
+  Device Specific Properties:
+    BacklightCompensation: [ {on} | off ]
+    Brightness
+    Contrast
+    FrameRate: [ {30.0000} | 15.0000 ]
+    Gamma
+    Hue
+    Saturation
+    Sharpness
+
+
+
+----------MATLAB ROOT DIRECTORY----------
+
+	C:\Program Files\MATLAB\R2011a
+
+----------MATLAB PATH----------
+
+
+		MATLABPATH
+
+	C:\Users\update\Dropbox\Teleco\Grado en Ingeniería de Sonido e Imagen\Cuarto\PFG\Rutinas\uigetvar_putvar
+	C:\Users\update\Dropbox\Teleco\Grado en Ingeniería de Sonido e Imagen\Cuarto\PFG\Rutinas\uigetvar_putvar\uigetvar_putvar
+	C:\Users\update\Documents\MATLAB
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\general
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\ops
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\lang
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\elmat
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\randfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\elfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\specfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\matfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\datafun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\polyfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\funfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\sparfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\scribe
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\graph2d
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\graph3d
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\specgraph
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\graphics
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\uitools
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\strfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\imagesci
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\iofun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\audiovideo
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\timefun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\datatypes
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\verctrl
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\codetools
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\helptools
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\winfun
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\winfun\NET
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\demos
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\timeseries
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\hds
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\guide
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\plottools
+	C:\Program Files\MATLAB\R2011a\toolbox\local
+	C:\Program Files\MATLAB\R2011a\toolbox\matlab\datamanager
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\simulink
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\instrument
+	C:\Program Files\MATLAB\R2011a\toolbox\coder\matlabcoder
+	C:\Program Files\MATLAB\R2011a\toolbox\matlabxl\matlabxl
+	C:\Program Files\MATLAB\R2011a\toolbox\matlabxl\matlabxldemos
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simulink
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simulink\slresolve
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\blocks
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\components
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\fixedandfloat
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\fixedandfloat\obsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simdemos\aerospace
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simdemos\automotive
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simdemos\industrial
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simdemos\simfeatures
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simdemos\simgeneral
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\dee
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\glue
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\glue\studio
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\dastudio\depviewer
+	C:\Program Files\MATLAB\R2011a\toolbox\stateflow\stateflow
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simulink\MPlayIO
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simulink\dataobjectwizard
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\hdlshared
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\asap2\asap2
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\asap2\asap2\user
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\common\can\blocks
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\common\tgtcommon
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\connectivity
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\pil
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\shared
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtw\datadiff\GUI
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtw\datadiff\GUI\Icons
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtw\datadiff\API
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtw\cgv\API
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtw\misra
+	C:\Program Files\MATLAB\R2011a\toolbox\simulinkcoder
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\accel
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\blocks\library
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\blocks\obsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\fixedandfloat\fxpdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simulink\modeladvisor
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\simulink\modeladvisor\fixpt
+	C:\Program Files\MATLAB\R2011a\toolbox\stateflow\sfdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\stateflow\coder
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\adivdsp
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\adivdsp\vdspdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\adivdsp\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\adivdsp\tfl
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\adivdsp\vdspblks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\adivdsp\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\aero\aero
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\mapgeodesy
+	C:\Program Files\MATLAB\R2011a\toolbox\aeroblks\aeroblks
+	C:\Program Files\MATLAB\R2011a\toolbox\aeroblks\aerodemos
+	C:\Program Files\MATLAB\R2011a\toolbox\aeroblks\aerodemos\texture
+	C:\Program Files\MATLAB\R2011a\toolbox\aero\astdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\asynciolib
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\AUTOSAR\AUTOSAR
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\bioinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\biolearning
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\microarray
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\mass_spec
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\proteins
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\biomatrices
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\biodemos
+	C:\Program Files\MATLAB\R2011a\toolbox\bioinfo\graphtheory
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\blackfin
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\blackfin\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\blackfin\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\blackfin\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\blackfin\blackfindemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\c166\c166
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\c166\blocks
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\c166\c166demos
+	C:\Program Files\MATLAB\R2011a\toolbox\target\foundation\utils\resource_config
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\can
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\can\canblks
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\can\canmasks
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\can\canmex
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\cgir_fe
+	C:\Program Files\MATLAB\R2011a\toolbox\coder\codegendemos
+	C:\Program Files\MATLAB\R2011a\toolbox\coder\emlcodermex
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\coder_foundation\tfl
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\simtargets
+	C:\Program Files\MATLAB\R2011a\toolbox\coder\coder
+	C:\Program Files\MATLAB\R2011a\toolbox\comm\comm
+	C:\Program Files\MATLAB\R2011a\toolbox\comm\commutilities\comminit
+	C:\Program Files\MATLAB\R2011a\toolbox\comm\commutilities\commmex
+	C:\Program Files\MATLAB\R2011a\toolbox\comm\commutilities
+	C:\Program Files\MATLAB\R2011a\toolbox\comm\commdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\comm\commdeprecated
+	C:\Program Files\MATLAB\R2011a\help\toolbox\comm\examples
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\testconsole
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\comparisons
+	C:\Program Files\MATLAB\R2011a\toolbox\compiler
+	C:\Program Files\MATLAB\R2011a\toolbox\compiler\compilerdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\control\control
+	C:\Program Files\MATLAB\R2011a\toolbox\control\ctrlguis
+	C:\Program Files\MATLAB\R2011a\toolbox\control\ctrlobsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\control\ctrlutil
+	C:\Program Files\MATLAB\R2011a\toolbox\control\ctrldemos
+	C:\Program Files\MATLAB\R2011a\help\toolbox\control\examples
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\controllib\engine
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\controllib\engine\options
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\controllib\engine\optim
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\controllib\general
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\controllib\graphics
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\controllib\requirements
+	C:\Program Files\MATLAB\R2011a\toolbox\curvefit\curvefit
+	C:\Program Files\MATLAB\R2011a\toolbox\curvefit\splines
+	C:\Program Files\MATLAB\R2011a\toolbox\curvefit\cftoolgui
+	C:\Program Files\MATLAB\R2011a\toolbox\curvefit\sftoolgui
+	C:\Program Files\MATLAB\R2011a\toolbox\curvefit\curvefitdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\optimlib
+	C:\Program Files\MATLAB\R2011a\toolbox\daq\daq
+	C:\Program Files\MATLAB\R2011a\toolbox\daq\daqguis
+	C:\Program Files\MATLAB\R2011a\toolbox\daq\daqdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\dastudio
+	C:\Program Files\MATLAB\R2011a\toolbox\database\database
+	C:\Program Files\MATLAB\R2011a\toolbox\database\dbdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\database\vqb
+	C:\Program Files\MATLAB\R2011a\toolbox\datafeed\datafeed
+	C:\Program Files\MATLAB\R2011a\toolbox\datafeed\dfgui
+	C:\Program Files\MATLAB\R2011a\toolbox\des\desblks
+	C:\Program Files\MATLAB\R2011a\toolbox\des\desmasks
+	C:\Program Files\MATLAB\R2011a\toolbox\des\desmex
+	C:\Program Files\MATLAB\R2011a\toolbox\des\desdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\distcomp
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\user
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\mpi
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\pctdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\parallel
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\parallel\util
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\lang
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\cluster
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\gpu
+	C:\Program Files\MATLAB\R2011a\toolbox\distcomp\worker
+	C:\Program Files\MATLAB\R2011a\toolbox\dotnetbuilder\dotnetbuilder
+	C:\Program Files\MATLAB\R2011a\toolbox\dotnetbuilder\dotnetbuilderdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\dsp\dsp
+	C:\Program Files\MATLAB\R2011a\toolbox\dsp\dsputilities
+	C:\Program Files\MATLAB\R2011a\toolbox\dsp\dsputilities\dspinit
+	C:\Program Files\MATLAB\R2011a\toolbox\dsp\dsputilities\dspmex
+	C:\Program Files\MATLAB\R2011a\toolbox\dsp\dspdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\filterdesignlib
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\system
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\dspblks\dspblks
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\dspblks\dspmex
+	C:\Program Files\MATLAB\R2011a\toolbox\fixedpoint\fixedpoint
+	C:\Program Files\MATLAB\R2011a\help\toolbox\dsp\examples
+	C:\Program Files\MATLAB\R2011a\toolbox\dsp\filterdesign
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\eclipseide
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\eclipseide\eclipseidedemos
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\eclipseide\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\eclipseide\registry
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\eclipseide\tfl
+	C:\Program Files\MATLAB\R2011a\toolbox\econ\econ
+	C:\Program Files\MATLAB\R2011a\toolbox\econ\econdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\edalink
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\foundation\hdllink
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\extensions\modelsim\modelsim
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\extensions\modelsim\modelsimdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\extensions\incisive\incisive
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\extensions\incisive\incisivedemos
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\extensions\discovery\discovery
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\extensions\discovery\discoverydemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\tlmgenerator\foundation
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\tlmgenerator\foundation\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\tlmgenerator\foundation\tlmgeneratordemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\eda\edagraph
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\eda\fil
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\eda\fil\fildemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\eda\fpgaautomation
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\eda\hdlparser
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\ecoder
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\ecoder\ecoderdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpt
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpt\mpt
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpt\user_specific
+	C:\Program Files\MATLAB\R2011a\toolbox\embeddedcoder
+	C:\Program Files\MATLAB\R2011a\toolbox\eml\eml
+	C:\Program Files\MATLAB\R2011a\toolbox\exlink
+	C:\Program Files\MATLAB\R2011a\toolbox\finance\finance
+	C:\Program Files\MATLAB\R2011a\toolbox\finance\calendar
+	C:\Program Files\MATLAB\R2011a\toolbox\finance\findemos
+	C:\Program Files\MATLAB\R2011a\toolbox\finance\finsupport
+	C:\Program Files\MATLAB\R2011a\toolbox\finance\ftseries
+	C:\Program Files\MATLAB\R2011a\toolbox\finderiv\finderiv
+	C:\Program Files\MATLAB\R2011a\toolbox\finderiv\finderivdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\finfixed\finfixed
+	C:\Program Files\MATLAB\R2011a\toolbox\finfixed\finfixdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\fixedpoint\fidemos
+	C:\Program Files\MATLAB\R2011a\toolbox\fixedpoint\fixedpointtool
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\spcuilib
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\siglib
+	C:\Program Files\MATLAB\R2011a\toolbox\fixpoint
+	C:\Program Files\MATLAB\R2011a\toolbox\fixpoint\fpca
+	C:\Program Files\MATLAB\R2011a\toolbox\edalink\extensions\fpgaautomation\fpgademos
+	C:\Program Files\MATLAB\R2011a\toolbox\fuzzy\fuzzy
+	C:\Program Files\MATLAB\R2011a\toolbox\fuzzy\fuzdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\fuzzy\fuzzyutil
+	C:\Program Files\MATLAB\R2011a\toolbox\geoweb\geoweb
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ghsmulti
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ghsmulti\multidemos
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ghsmulti\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ghsmulti\multiblks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ghsmulti\tfl
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ghsmulti\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\globaloptim
+	C:\Program Files\MATLAB\R2011a\toolbox\globaloptim\globaloptim
+	C:\Program Files\MATLAB\R2011a\toolbox\globaloptim\globaloptimdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\hdlcoder\hdlcoder
+	C:\Program Files\MATLAB\R2011a\toolbox\hdlcoder\hdlcoder\hdlwa
+	C:\Program Files\MATLAB\R2011a\toolbox\hdlcoder\hdlcoderdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\hdlfilter\hdlfilter
+	C:\Program Files\MATLAB\R2011a\toolbox\hdlfilter\hdlfiltdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\iarew
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\iarew\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\iarew\iarewdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\iarew\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\iarew\templates
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\hookpoints
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\tgtpref2
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\profiler
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\blks\tlc_c
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\pjtgenerator\blks\utils
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\util
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\errorhandler
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\lfsocket\lfsocket
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\foundation\xmakefile
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\idelinkdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\ident
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\nlident
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\idobsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\idguis
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\idutils
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\iddemos
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\iddemos\examples
+	C:\Program Files\MATLAB\R2011a\toolbox\ident\idhelp
+	C:\Program Files\MATLAB\R2011a\toolbox\images\colorspaces
+	C:\Program Files\MATLAB\R2011a\toolbox\images\images
+	C:\Program Files\MATLAB\R2011a\toolbox\images\imdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\images\imuitools
+	C:\Program Files\MATLAB\R2011a\toolbox\images\iptformats
+	C:\Program Files\MATLAB\R2011a\toolbox\images\iptutils
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\imageslib
+	C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaq
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\imaqlib
+	C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaqdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaqblks\imaqblks
+	C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaqblks\imaqmasks
+	C:\Program Files\MATLAB\R2011a\toolbox\imaq\imaqblks\imaqmex
+	C:\Program Files\MATLAB\R2011a\toolbox\instrument\instrument
+	C:\Program Files\MATLAB\R2011a\toolbox\instrument\instrumentdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\instrument\instrumentblks\instrumentblks
+	C:\Program Files\MATLAB\R2011a\toolbox\instrument\instrumentblks\instrumentmex
+	C:\Program Files\MATLAB\R2011a\toolbox\instrument\instrumentblks\instrumentmasks
+	C:\Program Files\MATLAB\R2011a\toolbox\javabuilder\javabuilder
+	C:\Program Files\MATLAB\R2011a\toolbox\javabuilder\javabuilderdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\sam\m3i
+	C:\Program Files\MATLAB\R2011a\toolbox\map\map
+	C:\Program Files\MATLAB\R2011a\toolbox\map\mapdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\map\mapdisp
+	C:\Program Files\MATLAB\R2011a\toolbox\map\mapformats
+	C:\Program Files\MATLAB\R2011a\toolbox\map\mapproj
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\maputils
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\simcoverage
+	C:\Program Files\MATLAB\R2011a\toolbox\mpc\mpc
+	C:\Program Files\MATLAB\R2011a\toolbox\mpc\mpcdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\mpc\mpcguis
+	C:\Program Files\MATLAB\R2011a\toolbox\mpc\mpcobsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\mpc\mpcutils
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpc555dk
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpc555dk\common\configuration
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpc555dk\mpc555demos
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpc555dk\mpc555dk
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpc555dk\pil
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpc555dk\rt\blockset\mfiles
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\mpc555dk\rt\blockset
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nncontrol
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nndemos
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nndemos\nndatasets
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnadapt
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nndatafun
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnderivative
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nndistance
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nndivision
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nninitlayer
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nninitnetwork
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nninitweight
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnlearn
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnnetfun
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnnetinput
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnnetwork
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnperformance
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnplot
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnprocess
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnsearch
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nntopology
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nntrain
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nntransfer
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnet\nnweight
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnguis
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnobsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\nnet\nnutils
+	C:\Program Files\MATLAB\R2011a\toolbox\optim\optim
+	C:\Program Files\MATLAB\R2011a\toolbox\optim\optimdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\pde
+	C:\Program Files\MATLAB\R2011a\toolbox\pde\pdedemos
+	C:\Program Files\MATLAB\R2011a\toolbox\phased\phased
+	C:\Program Files\MATLAB\R2011a\toolbox\phased\phaseddemos
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\data_manager\data_manager
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\drive\drive
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\drive\drivedemos
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\elec\elec
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\elec\elecdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\equation_language\equation_language
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\foundation\foundation
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\gl\core\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\gl\sli\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\logging\base\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\logging\mli\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\mech\mech
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\mech\importer
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\mech\mechdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\network_engine\ne_support
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\network_engine\network_engine
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\ne_sli\ne_sli
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\pmir\pmir
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\pm_sli\pm_sli
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\pm_visimpl\pm_visimpl
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\powersys
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\DR\DR
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\drives\drives
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\facts\facts
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\DR\DRdemo
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\drives\drivesdemo
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\facts\factsdemo
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\powersys\powerdemo
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\sdl\sdl
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\sdl\classic
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\sdl\sdldemos
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\sh\sh
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\sh\shdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\compiler\core\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\compiler\sli\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\simscapedemos
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\engine\core\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\engine\mli\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\engine\sli\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\foundation\simscape
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape_language\simscape_language
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\library\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simscape\simscape\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\simulation\base\m
+	C:\Program Files\MATLAB\R2011a\toolbox\physmod\unit_manager\unit_manager
+	C:\Program Files\MATLAB\R2011a\toolbox\plccoder\plccoder
+	C:\Program Files\MATLAB\R2011a\toolbox\plccoder\plccoderdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\qualkits\common
+	C:\Program Files\MATLAB\R2011a\toolbox\qualkits\do
+	C:\Program Files\MATLAB\R2011a\toolbox\qualkits\iec
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\reqmgt
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\slvnv
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\rmidemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rf\rf
+	C:\Program Files\MATLAB\R2011a\toolbox\rf\rfdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rf\rftool
+	C:\Program Files\MATLAB\R2011a\toolbox\rfblks\rfblks
+	C:\Program Files\MATLAB\R2011a\toolbox\rfblks\rfblksmasks
+	C:\Program Files\MATLAB\R2011a\toolbox\rfblks\rfblksmex
+	C:\Program Files\MATLAB\R2011a\toolbox\rfblks\rfblksdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\robust
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\rctlmi
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\rctutil
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\rctdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\rctobsolete\robust
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\rctobsolete\lmi
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\rctobsolete\mutools\commands
+	C:\Program Files\MATLAB\R2011a\toolbox\robust\rctobsolete\mutools\subs
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgen\rptgen
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgen\rptgenv1
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgen\rptgendemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgenext\rptgenext
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgenext\rptgenextv1
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgenext\rptgenextdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\rptgen
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtwdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\rtwdemos\rsimdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\simulink\blocks\sb2sl
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\eml\eml
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\sigbldr
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\slcontrollib
+	C:\Program Files\MATLAB\R2011a\toolbox\signal\signal
+	C:\Program Files\MATLAB\R2011a\toolbox\signal\sigtools
+	C:\Program Files\MATLAB\R2011a\toolbox\signal\sptoolgui
+	C:\Program Files\MATLAB\R2011a\toolbox\signal\sigdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\simbio\simbio
+	C:\Program Files\MATLAB\R2011a\toolbox\simbio\simbiodemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\statslib
+	C:\Program Files\MATLAB\R2011a\toolbox\simrf\simrf
+	C:\Program Files\MATLAB\R2011a\toolbox\simrf\simrfmasks
+	C:\Program Files\MATLAB\R2011a\toolbox\simrf\simrfdemos
+	C:\Program Files\MATLAB\R2011a\help\toolbox\simrf\examples
+	C:\Program Files\MATLAB\R2011a\toolbox\sl3d\sl3d
+	C:\Program Files\MATLAB\R2011a\toolbox\sl3d\sl3ddemos
+	C:\Program Files\MATLAB\R2011a\toolbox\slcontrol\slcontrol
+	C:\Program Files\MATLAB\R2011a\toolbox\slcontrol\slctrlguis
+	C:\Program Files\MATLAB\R2011a\toolbox\slcontrol\slctrlutil
+	C:\Program Files\MATLAB\R2011a\toolbox\slcontrol\slctrldemos
+	C:\Program Files\MATLAB\R2011a\toolbox\slcontrol\slctrlobsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sldo
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sldoguis
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sldodemos
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sldodemos\optim
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sldodemos\estim
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sldodemos\estim\docexamples\adaptive
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sldodemos\estim\docexamples\lookuptable
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sloptim\sloptim
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sloptim\sloptguis
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\sloptim\sloptobsolete
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\slestim\slestguis
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\slestim\slestim
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\slestim\slestmex
+	C:\Program Files\MATLAB\R2011a\toolbox\sldo\slestim\slestutil
+	C:\Program Files\MATLAB\R2011a\toolbox\sldv\sldv
+	C:\Program Files\MATLAB\R2011a\toolbox\sldv\sldvdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\sldv
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\simcovdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\slvnvdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\slvnv
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\do178b
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\iec61508
+	C:\Program Files\MATLAB\R2011a\toolbox\slvnv\styleguide
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgenext\slxmlcomp
+	C:\Program Files\MATLAB\R2011a\toolbox\stats\stats
+	C:\Program Files\MATLAB\R2011a\toolbox\stats\statsdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\stats\classreg
+	C:\Program Files\MATLAB\R2011a\toolbox\symbolic\symbolic
+	C:\Program Files\MATLAB\R2011a\toolbox\symbolic\symbolicdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\systemtest\systemtest
+	C:\Program Files\MATLAB\R2011a\toolbox\systemtest\systemtest\removed
+	C:\Program Files\MATLAB\R2011a\toolbox\systemtest\systemtestdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\target
+	C:\Program Files\MATLAB\R2011a\toolbox\target\targetdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\target\foundation
+	C:\Program Files\MATLAB\R2011a\toolbox\target\foundation\utils
+	C:\Program Files\MATLAB\R2011a\toolbox\target\foundation\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\foundation\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\foundation\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic2000
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic2000\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic2000\utils
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic2000\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic2000\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic2000\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic2000\tic2000demos
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\tfl
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\utils
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\blks\sysobj_mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic6000\tic6000demos
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\linux\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\linux\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\linux\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\linux\src
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\vxworks\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\vxworks\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\vxworks\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\vxworks\src
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\windows\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\windows\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\operatingsystem\windows\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\intelhost\tfl
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\shared
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\shared\ti
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\shared\ti\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\shared\ti\utils
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\shared\ti\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\shared\ti\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\shared\ti\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\etargets\etargets
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\etargets\etargets\demoutils
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\testmeaslib
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\tasking\tasking
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\tasking\taskingdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\tasking\tasking\taskingblks
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\testmeaslib\general
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\testmeaslib\graphics
+	C:\Program Files\MATLAB\R2011a\toolbox\shared\testmeaslib\simulink
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic5000
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic5000\blks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic5000\blks\mex
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic5000\blks\masks
+	C:\Program Files\MATLAB\R2011a\toolbox\target\extensions\processor\tic5000\tic5000demos
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\ccsblks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\ccsdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\ccsdemos\util
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\ccslinkblks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\ccslinkblks\rtdxsimblks
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\lic
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\tfl
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\util
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\rtw
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\ticcs\envChecker
+	C:\Program Files\MATLAB\R2011a\toolbox\vision\vision
+	C:\Program Files\MATLAB\R2011a\toolbox\vision\visionutilities
+	C:\Program Files\MATLAB\R2011a\toolbox\vision\visionutilities\visioninit
+	C:\Program Files\MATLAB\R2011a\toolbox\vision\visionutilities\visionmex
+	C:\Program Files\MATLAB\R2011a\toolbox\vision\visiondemos
+	C:\Program Files\MATLAB\R2011a\help\toolbox\vision\examples
+	C:\Program Files\MATLAB\R2011a\toolbox\wavelet\wavelet
+	C:\Program Files\MATLAB\R2011a\toolbox\wavelet\wmultisig1d
+	C:\Program Files\MATLAB\R2011a\toolbox\wavelet\wavedemo
+	C:\Program Files\MATLAB\R2011a\toolbox\wavelet\compression
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\wrworkbench
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\wrworkbench\mdlinfo
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\wrworkbench\registry
+	C:\Program Files\MATLAB\R2011a\toolbox\idelink\extensions\wrworkbench\wrworkbenchblks
+	C:\Program Files\MATLAB\R2011a\toolbox\rptgen\xmlcomp
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\xpc\xpc
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\xpc\target\build\xpcblocks\thirdpartydrivers
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\xpc\target\build\xpcblocks
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\common\can\blocks\tlc_c
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\xpc\xpcdemos
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\xpc\xpc\xpcmngr
+	C:\Program Files\MATLAB\R2011a\toolbox\rtw\targets\xpc\target\kernel\embedded
+
+----------C:\PROGRAM FILES\MATLAB\R2011A\TOOLBOX\IMAQ\IMAQADAPTORS\WIN64 Directory----------
+
+El sistema no puede encontrar la ruta especificada.
+
+
+----------IMAGE ACQUISITION MEMORY INFORMATION----------
+
+          MemoryLoad: 76
+           TotalPhys: 4.1255e+009
+           AvailPhys: 968515584
+       TotalPageFile: 8.2491e+009
+       AvailPageFile: 3.1720e+009
+        TotalVirtual: 8.7961e+012
+        AvailVirtual: 8.7942e+012
+    FrameMemoryLimit: 1.0000e+009
+     FrameMemoryUsed: 0
+
+
+----------CPU/SYSTEM INFORMATION----------
+
+
+--------------------SYSTEMINFO--------------------
+
+
+Nombre de host:                            UPDATE-PC
+Nombre del sistema operativo:              Microsoft Windows 7 Home Premium 
+Versi¢n del sistema operativo:             6.1.7601 Service Pack 1 Compilaci¢n 7601
+Fabricante del sistema operativo:          Microsoft Corporation
+Configuraci¢n del sistema operativo:       Estaci¢n de trabajo independiente
+Tipo de compilaci¢n del sistema operativo: Multiprocessor Free
+Propiedad de:                              update
+Organizaci¢n registrada:                   
+Id. del producto:                          00359-OEM-8992687-00006
+Fecha de instalaci¢n original:             03/09/2012, 17:22:05
+Tiempo de arranque del sistema:            08/11/2015, 0:00:27
+Fabricante del sistema:                    Acer
+Modelo el sistema:                         Aspire V3-571G
+Tipo de sistema:                           x64-based PC
+Procesador(es):                            1 Procesadores instalados.
+                                           [01]: Intel64 Family 6 Model 58 Stepping 9 GenuineIntel ~1375 Mhz
+Versi¢n del BIOS:                          Acer V1.07, 11/05/2012
+Directorio de Windows:                     C:\Windows
+Directorio de sistema:                     C:\Windows\system32
+Dispositivo de arranque:                   \Device\HarddiskVolume2
+Configuraci¢n regional del sistema:        es;Espa¤ol (internacional)
+Idioma de entrada:                         es;Espa¤ol (tradicional)
+Zona horaria:                              (UTC+01:00) Bruselas, Copenhague, Madrid, Par¡s
+Cantidad total de memoria f¡sica:          3.934 MB
+Memoria f¡sica disponible:                 917 MB
+Memoria virtual: tama¤o m ximo:            7.867 MB
+Memoria virtual: disponible:               3.013 MB
+Memoria virtual: en uso:                   4.854 MB
+Ubicaci¢n(es) de archivo de paginaci¢n:    C:\pagefile.sys
+Dominio:                                   WORKGROUP
+Servidor de inicio de sesi¢n:              \\UPDATE-PC
+Revisi¢n(es):                              282 revisi¢n(es) instaladas.
+                                           [01]: KB2849697
+                                           [02]: KB2849697
+                                           [03]: KB2849696
+                                           [04]: KB2849696
+                                           [05]: KB2841134
+                                           [06]: KB2841134
+                                           [07]: KB2670838
+                                           [08]: KB971033
+                                           [09]: KB2393802
+                                           [10]: KB2479943
+                                           [11]: KB2491683
+                                           [12]: KB2492386
+                                           [13]: KB2506014
+                                           [14]: KB2506212
+                                           [15]: KB2506928
+                                           [16]: KB2509553
+                                           [17]: KB2511455
+                                           [18]: KB2515325
+                                           [19]: KB2533552
+                                           [20]: KB2534366
+                                           [21]: KB2536275
+                                           [22]: KB2536276
+                                           [23]: KB2544893
+                                           [24]: KB2545698
+                                           [25]: KB2547666
+                                           [26]: KB2552343
+                                           [27]: KB2556532
+                                           [28]: KB2560656
+                                           [29]: KB2563227
+                                           [30]: KB2564958
+                                           [31]: KB2570947
+                                           [32]: KB2579686
+                                           [33]: KB2585542
+                                           [34]: KB2603229
+                                           [35]: KB2604115
+                                           [36]: KB2619339
+                                           [37]: KB2620704
+                                           [38]: KB2621440
+                                           [39]: KB2631813
+                                           [40]: KB2640148
+                                           [41]: KB2644615
+                                           [42]: KB2647753
+                                           [43]: KB2652029
+                                           [44]: KB2654428
+                                           [45]: KB2660075
+                                           [46]: KB2661254
+                                           [47]: KB2667402
+                                           [48]: KB2676562
+                                           [49]: KB2679255
+                                           [50]: KB2685811
+                                           [51]: KB2685813
+                                           [52]: KB2690533
+                                           [53]: KB2698365
+                                           [54]: KB2705219
+                                           [55]: KB2709715
+                                           [56]: KB2712808
+                                           [57]: KB2719857
+                                           [58]: KB2724197
+                                           [59]: KB2726535
+                                           [60]: KB2727528
+                                           [61]: KB2729094
+                                           [62]: KB2732059
+                                           [63]: KB2732487
+                                           [64]: KB2736422
+                                           [65]: KB2742599
+                                           [66]: KB2750841
+                                           [67]: KB2761217
+                                           [68]: KB2763523
+                                           [69]: KB2770660
+                                           [70]: KB2773072
+                                           [71]: KB2786081
+                                           [72]: KB2791765
+                                           [73]: KB2799494
+                                           [74]: KB2799926
+                                           [75]: KB2800095
+                                           [76]: KB2803821
+                                           [77]: KB2807986
+                                           [78]: KB2808679
+                                           [79]: KB2813170
+                                           [80]: KB2813347
+                                           [81]: KB2813430
+                                           [82]: KB2820331
+                                           [83]: KB2832414
+                                           [84]: KB2834140
+                                           [85]: KB2835361
+                                           [86]: KB2839894
+                                           [87]: KB2840631
+                                           [88]: KB2843630
+                                           [89]: KB2846960
+                                           [90]: KB2847311
+                                           [91]: KB2847927
+                                           [92]: KB2852386
+                                           [93]: KB2853952
+                                           [94]: KB2861191
+                                           [95]: KB2861698
+                                           [96]: KB2862152
+                                           [97]: KB2862330
+                                           [98]: KB2862335
+                                           [99]: KB2862966
+                                           [100]: KB2862973
+                                           [101]: KB2864058
+                                           [102]: KB2864202
+                                           [103]: KB2868038
+                                           [104]: KB2868116
+                                           [105]: KB2868626
+                                           [106]: KB2871997
+                                           [107]: KB2872339
+                                           [108]: KB2882822
+                                           [109]: KB2884256
+                                           [110]: KB2887069
+                                           [111]: KB2888049
+                                           [112]: KB2891804
+                                           [113]: KB2892074
+                                           [114]: KB2893294
+                                           [115]: KB2893519
+                                           [116]: KB2894844
+                                           [117]: KB2898785
+                                           [118]: KB2900986
+                                           [119]: KB2908783
+                                           [120]: KB2909210
+                                           [121]: KB2909921
+                                           [122]: KB2911501
+                                           [123]: KB2912390
+                                           [124]: KB2913152
+                                           [125]: KB2913431
+                                           [126]: KB2918077
+                                           [127]: KB2918614
+                                           [128]: KB2919469
+                                           [129]: KB2922229
+                                           [130]: KB2925418
+                                           [131]: KB2928562
+                                           [132]: KB2929437
+                                           [133]: KB2929733
+                                           [134]: KB2931356
+                                           [135]: KB2936068
+                                           [136]: KB2937610
+                                           [137]: KB2939576
+                                           [138]: KB2943357
+                                           [139]: KB2949927
+                                           [140]: KB2952664
+                                           [141]: KB2953522
+                                           [142]: KB2957189
+                                           [143]: KB2957503
+                                           [144]: KB2957509
+                                           [145]: KB2957689
+                                           [146]: KB2961072
+                                           [147]: KB2962872
+                                           [148]: KB2964358
+                                           [149]: KB2966583
+                                           [150]: KB2968294
+                                           [151]: KB2970228
+                                           [152]: KB2971850
+                                           [153]: KB2972100
+                                           [154]: KB2972211
+                                           [155]: KB2972280
+                                           [156]: KB2973112
+                                           [157]: KB2973201
+                                           [158]: KB2976627
+                                           [159]: KB2976897
+                                           [160]: KB2977292
+                                           [161]: KB2977629
+                                           [162]: KB2977728
+                                           [163]: KB2978092
+                                           [164]: KB2978120
+                                           [165]: KB2978668
+                                           [166]: KB2978742
+                                           [167]: KB2979570
+                                           [168]: KB2980245
+                                           [169]: KB2984972
+                                           [170]: KB2985461
+                                           [171]: KB2987107
+                                           [172]: KB2990214
+                                           [173]: KB2991963
+                                           [174]: KB2992611
+                                           [175]: KB2993651
+                                           [176]: KB2993958
+                                           [177]: KB3000988
+                                           [178]: KB3001554
+                                           [179]: KB3003057
+                                           [180]: KB3003743
+                                           [181]: KB3004361
+                                           [182]: KB3004375
+                                           [183]: KB3004394
+                                           [184]: KB3005607
+                                           [185]: KB3005788
+                                           [186]: KB3006121
+                                           [187]: KB3006137
+                                           [188]: KB3006625
+                                           [189]: KB3008627
+                                           [190]: KB3008923
+                                           [191]: KB3009736
+                                           [192]: KB3010788
+                                           [193]: KB3011780
+                                           [194]: KB3013410
+                                           [195]: KB3013455
+                                           [196]: KB3013531
+                                           [197]: KB3014406
+                                           [198]: KB3019215
+                                           [199]: KB3019978
+                                           [200]: KB3020338
+                                           [201]: KB3020369
+                                           [202]: KB3020370
+                                           [203]: KB3021674
+                                           [204]: KB3021917
+                                           [205]: KB3021952
+                                           [206]: KB3022345
+                                           [207]: KB3022777
+                                           [208]: KB3023215
+                                           [209]: KB3023266
+                                           [210]: KB3023562
+                                           [211]: KB3023607
+                                           [212]: KB3025390
+                                           [213]: KB3029944
+                                           [214]: KB3030377
+                                           [215]: KB3031432
+                                           [216]: KB3032323
+                                           [217]: KB3032359
+                                           [218]: KB3032655
+                                           [219]: KB3033889
+                                           [220]: KB3033890
+                                           [221]: KB3033929
+                                           [222]: KB3034196
+                                           [223]: KB3034344
+                                           [224]: KB3035126
+                                           [225]: KB3035131
+                                           [226]: KB3035132
+                                           [227]: KB3035583
+                                           [228]: KB3037574
+                                           [229]: KB3038314
+                                           [230]: KB3039066
+                                           [231]: KB3040272
+                                           [232]: KB3042553
+                                           [233]: KB3045171
+                                           [234]: KB3045645
+                                           [235]: KB3045685
+                                           [236]: KB3045999
+                                           [237]: KB3046002
+                                           [238]: KB3046017
+                                           [239]: KB3046049
+                                           [240]: KB3046269
+                                           [241]: KB3046306
+                                           [242]: KB3046482
+                                           [243]: KB3048070
+                                           [244]: KB3049563
+                                           [245]: KB3051768
+                                           [
+Tarjeta(s) de red:                         5 Tarjetas de interfaz de red instaladas.
+                                           [01]: Broadcom NetLink (TM) Gigabit Ethernet
+                                                 Nombre de conexi¢n: Conexi¢n de  rea local
+                                                 DHCP habilitado:    S¡
+                                                 Servidor DHCP:      255.255.255.255
+                                                 Direcciones IP
+                                                 [01]: 169.254.191.56
+                                                 [02]: fe80::91c3:90c9:538:bf38
+                                           [02]: Adaptador de red Broadcom 802.11n
+                                                 Nombre de conexi¢n: Conexi¢n de red inal mbrica
+                                                 DHCP habilitado:    S¡
+                                                 Servidor DHCP:      1.1.1.1
+                                                 Direcciones IP
+                                                 [01]: 192.168.136.235
+                                                 [02]: fe80::11b8:7905:fcab:f123
+                                           [03]: Broadcom Virtual Wireless Adapter
+                                                 Nombre de conexi¢n: Conexi¢n de  rea local 2
+                                                 Estado:             Hardware ausente
+                                           [04]: Ethernet Bus Filter Miniport
+                                                 Nombre de conexi¢n: Conexi¢n de  rea local 6
+                                                 DHCP habilitado:    No
+                                                 Direcciones IP
+                                           [05]: VirtualBox Host-Only Ethernet Adapter
+                                                 Nombre de conexi¢n: VirtualBox Host-Only Network
+                                                 Estado:             Hardware ausente
+
+----------DYNAMIC LOADER PATH----------
+
+
+--------------------PATH--------------------
+
+C:\ProgramData\Oracle\Java\javapath
+C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter
+C:\Program Files (x86)\Intel\iCLS Client\
+C:\Program Files\Intel\iCLS Client\
+C:\Program Files\Common Files\Microsoft Shared\Windows Live
+C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live
+C:\Windows\system32
+C:\Windows
+C:\Windows\System32\Wbem
+C:\Windows\System32\WindowsPowerShell\v1.0\
+C:\Program Files (x86)\Windows Live\Shared
+C:\Program Files (x86)\EgisTec MyWinLocker\x64
+C:\Program Files (x86)\EgisTec MyWinLocker\
+C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86
+C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64
+C:\Program Files\Intel\Intel(R) Management Engine Components\DAL
+C:\Program Files\Intel\Intel(R) Management Engine Components\IPT
+C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL
+C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT
+C:\Program Files\WIDCOMM\Bluetooth Software\
+C:\Program Files\WIDCOMM\Bluetooth Software\syswow64
+C:\Program Files\MATLAB\R2011a\runtime\win64
+C:\Program Files\MATLAB\R2011a\bin
+C:\Program Files\Common Files\Pleora
+C:\Program Files (x86)\Common Files\Pleora
+C:\Program Files (x86)\Skype\Phone\
+C:\Program Files\GenICam_v2_0\bin\Win64_x64
+C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\
+C:\Cadence\SPB_16.5\OpenAccess\bin\win32\opt
+C:\Cadence\SPB_16.5\tools\Capture
+C:\Cadence\SPB_16.5\tools\PSpice\Library
+C:\Cadence\SPB_16.5\tools\PSpice
+C:\Cadence\SPB_16.5\tools\specctra\bin
+C:\Cadence\SPB_16.5\tools\fet\bin
+C:\Cadence\SPB_16.5\tools\libutil\bin
+C:\Cadence\SPB_16.5\tools\bin
+C:\Cadence\SPB_16.5\tools\pcb\bin
+
+----------ENVIRONMENT VARIABLES----------
+
+
+--------------------GENICAM--------------------
+
+GENICAM_CACHE_V2_0 = C:\ProgramData\GenICam\xml\cache
+	 C:\ProgramData\GenICam\xml\cache present.
+
+GENICAM_LOG_CONFIG_V2_0 = C:\Program Files\GenICam_v2_0\log\config\DebugLogging.properties
+	 C:\Program Files\GenICam_v2_0\log\config\DebugLogging.properties present.
+
+GENICAM_ROOT_V2_0 = C:\Program Files\GenICam_v2_0
+	 C:\Program Files\GenICam_v2_0 present.
+
+MWIMAQ_GENICAM_LOCAL_XML = 
+
+--------------------END TEST--------------------
+
+This information has been saved in the text file: 
+imaqsupport.txt
+
+If any errors occurred, please e-mail this information to:
+support@mathworks.com
