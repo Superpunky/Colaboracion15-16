@@ -108,6 +108,7 @@ set(handles.getImageIo,'Enable', 'off');
 handles.imageIo = getsnapshot(handles.vid);
 handles.Io = sum(sum(handles.imageIo))/numel(handles.imageIo);
 %integrateImage(handles.imageIo);
+figure(10); imagesc(handles.imageIo);
 
 %Se obtiene el texto fijo y se concatena con el resultado obtenido.
 handles.fixtext = get(handles.IoText,'String');
@@ -265,6 +266,15 @@ function potFiberText_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+
+% --- Executes on button press in savePotCal.
+function savePotCal_Callback(hObject, eventdata, handles)
+% hObject    handle to savePotCal (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+PotencyCalibrationUI_CloseRequestFcn(PotencyCalibrationUI, eventdata, handles)
+
 % --- Función encargada de integrar la "potencia"(valor de pixel acumulado)
 %en una imagen
 function P = integrateImage(image)
@@ -282,18 +292,8 @@ function PotencyCalibrationUI_CloseRequestFcn(hObject, eventdata, handles)
 
 % Hint: delete(hObject) closes the figure
 
-asd = 'asd'
 set(handles.AjusteSatTA,'UserData', handles);
 %Parar la Preview en ventana principal
 stoppreview(handles.vid);
 
 delete(hObject);
-
-
-% --- Executes on button press in savePotCal.
-function savePotCal_Callback(hObject, eventdata, handles)
-% hObject    handle to savePotCal (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-PotencyCalibrationUI_CloseRequestFcn(PotencyCalibrationUI, eventdata, handles)

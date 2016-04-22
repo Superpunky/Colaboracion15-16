@@ -58,6 +58,9 @@ handles.output = hObject;
 handles.fixtextMeasAOIPot = 'Potency in AOI: ';
 handles.fixtextsatPixels = 'Saturated pixels (% of AOI): ';
 
+%Flag indicando que el eje inicialmente está en pixeles
+handles.axisMicrons = 0;
+
 % Update handles structure
 guidata(hObject, handles);
 
@@ -282,6 +285,10 @@ set(handles.axisSwitch, 'String', 'Switch axis to microns');
 vidRes = handles.vid.VideoResolution;
 nBands = handles.vid.NumberOfBands;
 image( zeros(vidRes(2), vidRes(1), nBands), 'Parent', handles.cameraAxes );
+%Pausa necesaria para que se haga bien la preview cuando los ejes están en
+%micras (los ejes deben adaptarse antes de cambiar a pixeles).
+pause(0.001);
+set(handles.cameraAxes,'nextplot','replacechildren');
 preview(handles.vid, get(handles.cameraAxes, 'Children'));
 colormap(jet)
 
@@ -305,16 +312,14 @@ set(handles.cameraControlState,'String', 'Busy...'); drawnow;
 %conectada) se detiene la preview, se toma una imágen y se dibuja en
 %cameraAxes. Si no, mensaje de error.
 if(isfield(handles,'vid'))
+    stoppreview(handles.vid);
+    handles.image = getsnapshot(handles.vid);
     if(get(handles.axisSwitch, 'Value'))
-        stoppreview(handles.vid);
-        handles.image = getsnapshot(handles.vid);
         set(0, 'CurrentFigure', AjusteSatTA);
         %contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0);
         contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0, 'Parent', handles.cameraAxes);
         set(handles.cameraAxes,'nextplot','replacechildren');
     else
-        stoppreview(handles.vid);
-        handles.image = getsnapshot(handles.vid);
         %set(0, 'CurrentFigure', handles.AjusteSatTA);
         set(groot, 'CurrentFigure', handles.AjusteSatTA);
         %handles.cameraAxes = imagesc(handles.image);
@@ -346,7 +351,7 @@ end
 %Poner el texto de "State a "Ok" y actualizar la estructura handles
 set(handles.cameraControlState,'String', 'Ok');
 %set(AjusteSatTA, 'UserData', handles);
-guidata(AjusteSatTA, handles);
+guidata(hObject, handles);
 
 %
 % ---------- Camera control panel end ----------
@@ -596,26 +601,6 @@ function getAOI_Callback(hObject, eventdata, handles)
 %Poner el texto "State" a "Busy..."
 set(handles.cameraControlState,'String', 'Busy...'); drawnow;
 
-%Actualizar cameraAxes con la imagen (evita que se pinten varias AOI sobre
-%la misma imagen)
-if(get(handles.axisSwitch, 'Value'))
-    set(0, 'CurrentFigure', AjusteSatTA);
-    %contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0);
-    contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0, 'Parent', handles.cameraAxes);
-    set(handles.cameraAxes,'nextplot','replacechildren');
-else
-    %set(0, 'CurrentFigure', handles.AjusteSatTA);
-    set(groot, 'CurrentFigure', handles.AjusteSatTA);
-    %handles.cameraAxes = imagesc(handles.image);
-    imagesc(handles.image, 'Parent', handles.cameraAxes);
-    %handles.cameraAxes = imshow(handles.image, [min(min(handles.image)) max(max(handles.image))]);
-    %set(get(handles.cameraAxes,'Parent'),'nextplot','replacechildren');
-    set(handles.cameraAxes,'nextplot','replacechildren');
-end
-colormap(jet);
-axis xy
-axis on
-
 %Ejecutar la función que obtiene el área circular de la imagen que se
 %corresponde con un cierto porcentaje de potencia
 try
@@ -633,8 +618,28 @@ if(~get(handles.continuousModeButton,'Value')&&isfield(handles,'imageIo')&&isfie
     set(handles.measAOIPot,'Enable', 'on');
 end
 
-
+%Si no ha habido error, actualizar los ejes con la imagen y el AOI
 if(~exist ('exception'))
+    
+    %Actualizar cameraAxes con la imagen (evita que se pinten varias AOI sobre
+    %la misma imagen)
+    if(get(handles.axisSwitch, 'Value'))
+        set(0, 'CurrentFigure', AjusteSatTA);
+        %contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0);
+        contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0, 'Parent', handles.cameraAxes);
+    else
+        %set(0, 'CurrentFigure', handles.AjusteSatTA);
+        set(groot, 'CurrentFigure', handles.AjusteSatTA);
+        %handles.cameraAxes = imagesc(handles.image);
+        imagesc(handles.image, 'Parent', handles.cameraAxes);
+        %handles.cameraAxes = imshow(handles.image, [min(min(handles.image)) max(max(handles.image))]);
+        %set(get(handles.cameraAxes,'Parent'),'nextplot','replacechildren');
+    end
+    set(handles.cameraAxes,'nextplot','replacechildren');
+    colormap(jet);
+    axis xy
+    axis on
+    
     %Intentar hacer un plot en la figura del AOI encontrada manteniendo la
     %imagen
     try
@@ -658,6 +663,8 @@ if(~exist ('exception'))
         end
     end
 end
+
+handles.AOIType = 'auto';
 %Poner el texto "State" a "Ok" y actualizar la estructura handles
 set(handles.cameraControlState,'String', 'Ok');
 %set(AjusteSatTA, 'UserData', handles);
@@ -707,13 +714,19 @@ handles.AOI = get(gcf,'UserData');
 if(~isempty(handles.AOI))
     AOI = handles.AOI;
     center = handles.AOI.Centro;
-    cx = real(center);
-    cy = imag(center);
-    r = handles.AOI.Radio;
+    handles.AOICenterx = round(real(center));
+    handles.AOICentery = round(imag(center));
+    handles.AOIRadius = round(handles.AOI.Radio);
+    if(handles.axisMicrons)
+        handles.AOICenterx = round(handles.AOICenterx/(max(handles.axisXum)/320));
+        handles.AOICentery = round(handles.AOICentery/(max(handles.axisYum)/256));
+        handles.AOIRadius = round(handles.AOIRadius/(max(handles.axisXum)/320));
+    end
     ix = size(handles.image, 2);
     iy = size(handles.image, 1);
-    [x,y]=meshgrid(-(cx-1):(ix-cx),-(cy-1):(iy-cy));
-    handles.mask =((x.^2+y.^2)<=r^2);
+    [x,y]=meshgrid(-(handles.AOICenterx-1):(ix-handles.AOICenterx),-(handles.AOICentery-1):(iy-handles.AOICentery));
+    handles.mask =((x.^2+y.^2)<=handles.AOIRadius^2);
+    handles.AOIImage = (double(handles.image)).*(handles.mask);
 end
 
 %Habilitar de nuevo todos los elementos, poner el texto "State" a "Ok" y
@@ -726,6 +739,8 @@ if(~isfield(handles,'imageIo') || ~isfield(handles,'mask') || ~isfield(handles,'
     set(handles.measAOIPot, 'Enable', 'off');
     set(handles.measPotButton,'Enable', 'off');
 end
+
+handles.AOIType = 'manual';
 
 set(handles.cameraControlState,'String', 'Ok'); drawnow;
 %set(AjusteSatTA, 'UserData', handles);
@@ -769,7 +784,8 @@ uiwait(PotencyCalibrationUI);
 %estructura creada con dichos datos con la estructura handles para manejar
 %una única estructura con todos los datos.
 data = get(handles.AjusteSatTA,'UserData');
-handles = catstructmod(data, handles);
+handles = catstructmod(handles, data);
+%handles = catstructmod(data, handles);
 
 %Habilitar de nuevo todos los elementos del gui y actualizar la estructura
 %handles.
@@ -818,6 +834,7 @@ uiwait(SpatialCalibrationUI);
 %una única estructura con todos los datos.
 data = get(handles.AjusteSatTA,'UserData');
 handles = catstructmod(data, handles);
+set(handles.AjusteSatTA, 'UserData', '');
 
 %Habilitar de nuevo todos los elementos del gui.
 enableAll(handles);
@@ -827,7 +844,7 @@ else
     %En caso de que se haya realizado correctamente la calibración espacial
     %se debe añadir la opcion de densidad de potencia al menu de unidades.
     unitStrings = cellstr(get(handles.potUnitMenu,'String'));
-    unitStrings{4,1} = 'Power Density (uW/um^2)';
+    unitStrings{4,1} = 'Power Density in AoI (uW/um^2)';
     set(handles.potUnitMenu,'string',unitStrings);
 end
 %Si no se ha realizado aún la calibración de potencia, deshabilitar lo que
@@ -869,8 +886,16 @@ Mode = get(hObject,'Value');
 if(Mode)
     disableAll(handles);
     set(handles.continuousModeButton,'Enable', 'on');
-    handles.vid.TimerPeriod = 1.5;
-    handles.vid.TimerFcn = {@continuousModeCallback};
+    handles.vid.TimerPeriod = 1;
+    handles.trackingIterations = 0;
+    %Callback para el timer dependiente de si el AOI actual es auto o
+    %manual
+    if(strcmp(handles.AOIType, 'manual'))
+        handles.vid.TimerPeriod = 0.5;
+        set(handles.vid, 'TimerFcn', {@manualAOITrackingCallback, hObject});
+    else
+        set(handles.vid, 'TimerFcn', {@autoAOITrackingCallback, hObject});
+    end
 else
     handles.vid.TimerFcn = {@memory_control_callback,handles};
     enableAll(handles);
@@ -941,22 +966,31 @@ guidata(hObject, handles);
 
     % ---------- Buttons Callbacks end ----------
 
-    % ---------- Timered Callbacks start ----------
+    % ---------- Timed Callbacks start ----------
 
-function continuousModeCallback(hObject, eventdata)
+function autoAOITrackingCallback(src, eventdata, hObject)
 
-handles = guidata(AjusteSatTA);
+handles = guidata(hObject);
+handles.trackingIterations = handles.trackingIterations+1;
 %handles = get(AjusteSatTA, 'UserData');
 
 %getImage_Callback junto con measAOIPot_Callback
 %Se toma una imagen y, si se ha ejecutdo la calibración de potencia
 %correctamente y se ha definido un AOI, se mide la potencia en dicha AOI
 
-getImage_Callback(AjusteSatTA, eventdata, handles);
-handles = guidata(AjusteSatTA);
+%getImage_Callback(hObject, eventdata, handles);
+%handles = guidata(hObject);
+
+if(isfield(handles,'vid'))
+    stoppreview(handles.vid);
+    handles.image = getsnapshot(handles.vid);
+else
+    h = msgbox('Error. Camera is not connected.','No Connection','error');
+end
+
 %handles = get(AjusteSatTA, 'UserData');
-getAOI_Callback(AjusteSatTA, eventdata, handles);
-handles = guidata(AjusteSatTA);
+getAOI_Callback(hObject, eventdata, handles);
+handles = guidata(hObject);
 %handles = get(AjusteSatTA, 'UserData');
 
 %Si está activado el control de saturacion, con cada imagen que se tome
@@ -968,7 +1002,7 @@ handles = guidata(AjusteSatTA);
 if(handles.satControlState)
     satControlCallback(hObject, eventdata);
     
-    handles = guidata(AjusteSatTA);
+    handles = guidata(hObject);
     %handles = get(AjusteSatTA, 'UserData');
 
     %Crear la cadena de caracteres para mostrar en la interfaz el
@@ -983,26 +1017,26 @@ end
 if(handles.backNoiseState)
     backNoiseControlCallback(hObject, eventdata);
     
-    handles = guidata(AjusteSatTA);
+    handles = guidata(hObject);
     %handles = get(AjusteSatTA, 'UserData');
 end
 
 %Si está activada la medida de potencia, se ejecuta el callback de medida
 %de potencia
 if(handles.measPotState)
-    measAOIPot_Callback(AjusteSatTA, eventdata, handles);
-    handles = get(AjusteSatTA, 'UserData');
+    measAOIPot_Callback(hObject, eventdata, handles);
+    handles = guidata(hObject);
 end
 
 %Eliminar imágenes logeadas (control de memoria) y actualizar estructura
 %handles.
 flushdata(handles.vid);
 %set(AjusteSatTA, 'UserData', handles);
-guidata(AjusteSatTA, handles);
+guidata(hObject, handles);
 
 function satControlCallback(hObject, eventdata)
 
-handles = guidata(AjusteSatTA);
+handles = guidata(hObject);
 %handles = get(AjusteSatTA, 'UserData');
 
 %if(isfield(handles,'a'))
@@ -1014,11 +1048,11 @@ handles = guidata(AjusteSatTA);
 
 %Se va calculando y mostrando el histograma tanto de la imagen completa
 %como del AOI con cada iteración del tracking.
-updateHistImage_Callback(AjusteSatTA, eventdata, handles);
-handles = guidata(AjusteSatTA);
+updateHistImage_Callback(hObject, eventdata, handles);
+handles = guidata(hObject);
 %handles = get(AjusteSatTA, 'UserData');
-updateHistAOI_Callback(AjusteSatTA, eventdata, handles);
-handles = guidata(AjusteSatTA);
+updateHistAOI_Callback(hObject, eventdata, handles);
+handles = guidata(hObject);
 %handles = get(AjusteSatTA, 'UserData');
 
 %Si el cálculo del AOI se realiza correctamente:
@@ -1026,7 +1060,7 @@ if(handles.AOIOk)
 
     %Se calcula el número de píxeles en los ultimos contenedores del histograma
     %y se calcula el porcentaje con respecto al total de pixeles del AOI
-    handles.satPixel = sum(handles.AOIPixelCount(handles.maxval*0.98:handles.maxval));
+    handles.satPixel = sum(handles.AOIPixelCount(round(handles.maxval*0.98):handles.maxval));
     handles.percSat = (handles.satPixel/handles.pixelAOI)*100;
 
     %Los umbrales de saturacion podrían ser configurables por el usuario.
@@ -1095,8 +1129,8 @@ if(handles.AOIOk)
                 set(handles.continuousModeButton, 'Enable', 'on');
             else
                 handles.AT = handles.AT/step3;
-                apertureTime_Callback(AjusteSatTA, eventdata, handles);
-                handles = guidata(AjusteSatTA);
+                apertureTime_Callback(hObject, eventdata, handles);
+                handles = guidata(hObject);
                 %handles = get(AjusteSatTA, 'UserData');
             end
         %FASE 1 - Paso grueso. Se disminuye el TA en un factor x2 hasta
@@ -1106,8 +1140,8 @@ if(handles.AOIOk)
         case 11
             if(handles.sat)
                 handles.AT = handles.AT/step1;
-                apertureTime_Callback(AjusteSatTA, eventdata, handles);
-                handles = guidata(AjusteSatTA);
+                apertureTime_Callback(hObject, eventdata, handles);
+                handles = guidata(hObject);
                 %handles = get(AjusteSatTA, 'UserData');
             else
                 handles.satControlPhase = 12;
@@ -1117,8 +1151,8 @@ if(handles.AOIOk)
         case 12
             if(~handles.sat)
                 handles.AT = handles.AT*step2;
-                apertureTime_Callback(AjusteSatTA, eventdata, handles);
-                handles = guidata(AjusteSatTA);
+                apertureTime_Callback(hObject, eventdata, handles);
+                handles = guidata(hObject);
                 %handles = get(AjusteSatTA, 'UserData');
             else
                 handles.satControlPhase = 13;
@@ -1133,8 +1167,8 @@ if(handles.AOIOk)
                 set(handles.continuousModeButton, 'Enable', 'on');
             else
                 handles.AT = handles.AT/step3;
-                apertureTime_Callback(AjusteSatTA, eventdata, handles);
-                handles = guidata(AjusteSatTA);
+                apertureTime_Callback(hObject, eventdata, handles);
+                handles = guidata(hObject);
                 %handles = get(AjusteSatTA, 'UserData');
             end
         otherwise
@@ -1143,22 +1177,22 @@ if(handles.AOIOk)
 end
 
 %set(AjusteSatTA, 'UserData', handles);
-guidata(AjusteSatTA, handles);
+guidata(hObject, handles);
 
 function backNoiseControlCallback(hObject, eventdata)
 
-handles = guidata(AjusteSatTA);
+handles = guidata(hObject);
 %handles = get(AjusteSatTA, 'UserData');
 
 %Si no se ha hecho en el control de saturación, se va calculando y
 %mostrando el histograma tanto de la imagen completa como del AOI con cada
 %iteración del tracking.
 if(~handles.satControlState)
-    updateHistImage_Callback(AjusteSatTA, eventdata, handles);
-    handles = guidata(AjusteSatTA);
+    updateHistImage_Callback(hObject, eventdata, handles);
+    handles = guidata(hObject);
     %handles = get(AjusteSatTA, 'UserData');
-    updateHistAOI_Callback(AjusteSatTA, eventdata, handles);
-    handles = guidata(AjusteSatTA);
+    updateHistAOI_Callback(hObject, eventdata, handles);
+    handles = guidata(hObject);
     %handles = get(AjusteSatTA, 'UserData');
 end
 
@@ -1169,7 +1203,7 @@ if(handles.AOIOk)
     %dicho valor
     handles.noiseImage = handles.image - uint16(handles.AOIimage);
     handles.meanNoise = mean(mean(handles.noiseImage));
-    handles.noiseThreshold = 3*handles.meanNoise;
+    handles.noiseThreshold = round(3*handles.meanNoise);
     
     %Se calcula el número de píxeles por debajo del umbral (tres veces el
     %ruido de fondo) y se calcula el porcentaje con respecto al total de
@@ -1191,8 +1225,8 @@ if(handles.AOIOk)
         %Aumentar el TA para evitar que se este por debajo del ruido. En
         %este caso se aumenta en un factor 3.
         handles.AT = handles.AT*3;
-        apertureTime_Callback(AjusteSatTA, eventdata, handles);
-        handles = guidata(AjusteSatTA);
+        apertureTime_Callback(hObject, eventdata, handles);
+        handles = guidata(hObject);
         %handles = get(AjusteSatTA, 'UserData');
     else
         if(isfield(handles, 'noiseWarning'))
@@ -1204,9 +1238,353 @@ if(handles.AOIOk)
 end
 
 %set(AjusteSatTA, 'UserData', handles);
-guidata(AjusteSatTA, handles);
+guidata(hObject, handles);
 
-    % ---------- Timered Callbacks end ----------
+function manualAOITrackingCallback(src, eventdata, hObject)
+
+%Esta función debe ejecutarse sólo si se entra en modo tracking cuando el
+%AOI definida es un AOI manual
+%En la creación de dicha AOI manual se debieron obtener los parámetros
+%correspondientes a su contorno o máscara y su posición. La región de
+%búsqueda se ha de definir aquí.
+
+%Cargar la estructura handles del GUI
+handles = guidata(hObject);
+
+%Poner el texto "State" a "Busy..."
+set(handles.cameraControlState,'String', 'Busy...'); drawnow;
+
+handles.trackingIterations = handles.trackingIterations+1;
+
+%Si es la primera vez que se ejecuta el callback del tracking manual,
+%guardar la imagen del AOI y las coordenadas del centro del spot
+%encontrados en dicha imagen como los "iniciales" para la corrección de las
+%derivas.
+
+if(handles.trackingIterations == 1)
+    handles.iniAOIImage = handles.AOIImage;
+    handles.iniAOICenterx = handles.AOICenterx;
+    handles.iniAOICentery = handles.AOICentery;
+end
+
+if(isfield(handles,'vid'))
+    stoppreview(handles.vid);
+    handles.image = getsnapshot(handles.vid);
+else
+    h = msgbox('Error. Camera is not connected.','No Connection','error');
+end
+
+handles.corrThreshold = 0.8;
+
+handles.lastSearch = 0;
+handles.searchRegionDim = 3;
+pixelStep = 4;
+
+first = 1;
+handles.AOIFound = 0;
+
+while((~handles.AOIFound)&&(~handles.lastSearch)||(first))
+    
+    handles.AOISearchStep = handles.AOIRadius*handles.searchRegionDim;
+
+    %Definicion inicial de la región de búsqueda
+    handles.AOISearchRegion = [handles.AOICenterx-handles.AOISearchStep...
+       handles.AOICentery-handles.AOISearchStep handles.AOICenterx+handles.AOISearchStep...
+       handles.AOICentery+handles.AOISearchStep]; %[x1 y1 x2 y2]
+
+    %Valor maximo de cada eje X e Y almacenado y usado en lugar del size de la
+    %imagen. Debería solucionar el problema con el eje en micras.
+    %if(handles.axisMicrons)
+    %   maxX = max(handles.axisXum);
+    %   maxY = max(handles.axisYum);
+    %else
+       maxX = size(handles.image,2);
+       maxY = size(handles.image,1);
+    %end
+
+    %Si la región de búsqueda se sale de la imagen por alguno de sus bordes se
+    %ajuste al borde correspondiente.
+    if(((handles.AOICenterx-handles.AOISearchStep)<0))
+       handles.AOISearchRegion(1) = 0;
+       handles.AOISearchRegion(3) = 2*handles.AOISearchStep;
+    end
+    if(((handles.AOICentery-handles.AOISearchStep)<0))
+       handles.AOISearchRegion(2) = 0;
+       handles.AOISearchRegion(4) = 2*handles.AOISearchStep;
+    end
+    if(((handles.AOICenterx+handles.AOISearchStep)>maxX))
+       handles.AOISearchRegion(3) = maxX;
+       handles.AOISearchRegion(1) = maxX-2*handles.AOISearchStep;
+    end
+    if(((handles.AOICentery+handles.AOISearchStep)>maxY))
+       handles.AOISearchRegion(4) = maxY;
+       handles.AOISearchRegion(2) = maxY-2*handles.AOISearchStep;
+    end
+    if(((handles.AOICenterx-handles.AOISearchStep)<0)&&((handles.AOICenterx+handles.AOISearchStep)>maxX))
+        handles.AOISearchRegion(1) = 0;
+        handles.AOISearchRegion(3) = maxX;
+    end
+    if(((handles.AOICentery-handles.AOISearchStep)<0)&&((handles.AOICentery+handles.AOISearchStep)>maxY))
+        handles.AOISearchRegion(2) = 0;
+        handles.AOISearchRegion(4) = maxY;
+    end
+
+    %Si los bordes de la región de búsqueda coinciden con los de la imagen (es
+    %decir, la región de búsqueda es la imagen completa) se activa un flag
+    %indicando que se trata de la última iteración de la búsqueda.
+    if((handles.AOISearchRegion(1) == 0)&&(handles.AOISearchRegion(3) == maxX)...
+       &&(handles.AOISearchRegion(2) == 0)&&(handles.AOISearchRegion(4) == maxY))
+       handles.lastSearch = 1;
+    end
+
+    %Region de busqueda definida handles.AOISearchRegion
+    %handles.AOISearchRegion
+    %set(handles.cameraAxes,'nextplot','replacechildren');
+    %hold(handles.cameraAxes, 'on')
+    %plot([handles.AOISearchRegion(1), handles.AOISearchRegion(1), handles.AOISearchRegion(3), handles.AOISearchRegion(3)],[handles.AOISearchRegion(2), handles.AOISearchRegion(4), handles.AOISearchRegion(2), handles.AOISearchRegion(4)], 'x', 'Parent', handles.cameraAxes);
+    %set(handles.cameraAxes,'nextplot','replacechildren');
+    %hold(handles.cameraAxes, 'off')
+
+    %Realizar barrido obteniendo corr2
+    %Con dichos parámetros, se debe ir recorriendo la región de búsqueda
+    %moviendo el AOI inicial y obteniendo su correlación con el AOI de la
+    %imagen anterior.
+
+    handles.corr = zeros(round(2*handles.AOISearchStep/pixelStep));
+    ix = maxX;
+    iy = maxY; 
+    
+    %%¿Seria esta la forma correcta?
+    iterationx = 0;
+    %numiters =(((handles.AOISearchRegion(3)-handles.AOIRadius)-(handles.AOISearchRegion(1)+handles.AOIRadius))/pixelStep)*(((handles.AOISearchRegion(4)-handles.AOIRadius)-(handles.AOISearchRegion(2)+handles.AOIRadius))/pixelStep);
+    %numiters
+    
+    %Primer bucle con paso de pixel grande para encontrar, dentro de la
+    %región de búsqueda grande, una primera estimación de la localización
+    %del AOI. Posteriormente se ejecuta un segundo bucle con paso de un
+    %pixel, pero en una región muy pequeña alrededor de la estimada
+    %anteriormente.
+    
+    for(centerx = (handles.AOISearchRegion(1)+handles.AOIRadius):pixelStep:(handles.AOISearchRegion(3)-handles.AOIRadius))
+        iterationx = iterationx+1;
+        iterationy = 0;
+        for(centery = (handles.AOISearchRegion(2)+handles.AOIRadius):pixelStep:(handles.AOISearchRegion(4)-handles.AOIRadius))
+            iterationy = iterationy+1;
+
+    %       Crear la imagen o máscara igual que el AOI manual con centro
+    %       en la posición (x,y). Obtener la corr2 entre esta y el AOI manual
+    %       de la imagen anterior y guardar el resultado en la posicion (x,y)
+    %       de handles.corr
+
+           [x,y]=meshgrid(-(centerx-1):(ix-centerx),-(centery-1):(iy-centery));
+           handles.maskCorr =((x.^2+y.^2)<=handles.AOIRadius^2);
+           handles.AOIImageCorr = (double(handles.image)).*(handles.maskCorr);
+
+    %       Copiar en una nueva matriz solo los valores distintos de 0 de
+    %       ambas imagenes de AOI para el corr2, si no no va a funcionar
+    
+           handles.AOIImageCorr = handles.AOIImageCorr(centery-handles.AOIRadius+1:centery+handles.AOIRadius,centerx-handles.AOIRadius+1:centerx+handles.AOIRadius);
+            
+           %Si se han ejecutado X iteraciones del callback del tracking o
+           %un multiplo, utilizar la imagen con AOI "inicial" para corregir
+           %así las derivas.
+           if(mod(handles.trackingIterations,30)==0)
+               handles.AOIImageCut = handles.iniAOIImage(handles.iniAOICentery-handles.AOIRadius+1:handles.iniAOICentery+handles.AOIRadius,handles.iniAOICenterx-handles.AOIRadius+1:handles.iniAOICenterx+handles.AOIRadius);
+           else
+               handles.AOIImageCut = handles.AOIImage(handles.AOICentery-handles.AOIRadius+1:handles.AOICentery+handles.AOIRadius,handles.AOICenterx-handles.AOIRadius+1:handles.AOICenterx+handles.AOIRadius);
+           end
+           
+           %handles.AOIImageCorr2(iterationy, iterationx) = handles.AOIImageCorr(centery-handles.AOIRadius+1:centery+handles.AOIRadius,centerx-handles.AOIRadius+1:centerx+handles.AOIRadius);
+           %handles.AOIImageCut(iterationy, iterationx) = handles.AOIImage(handles.AOICentery-handles.AOIRadius+1:handles.AOICentery+handles.AOIRadius,handles.AOICenterx-handles.AOIRadius+1:handles.AOICenterx+handles.AOIRadius);
+
+           handles.corr(iterationy, iterationx) = corr2(handles.AOIImageCut, handles.AOIImageCorr);       
+       end
+    end
+    
+    %iterationx*iterationy
+    
+    %Al finalizar la primera búsqueda se ha de obtener el punto que ha
+    %obtenido mayor correlación para estimar la zona donde realizar la
+    %búsqueda fina. La zona de búsqueda fina será un cuadrado de lado 2
+    %veces el paso de pixel utilizado y con centro el punto de máxima
+    %correlación encontrado.
+    
+    [c, idx ] = max(handles.corr(:));
+    [maxCorrYEst, maxCorrXEst] = ind2sub( size(handles.corr), idx );
+    maxCorrYEst = maxCorrYEst*pixelStep+(handles.AOISearchRegion(2)+handles.AOIRadius)-pixelStep;
+    maxCorrXEst = maxCorrXEst*pixelStep+(handles.AOISearchRegion(1)+handles.AOIRadius)-pixelStep;
+    
+    handles.AOIEstimateRegion = [maxCorrXEst-pixelStep...
+       maxCorrYEst-pixelStep maxCorrXEst+pixelStep...
+       maxCorrYEst+pixelStep];
+   
+   handles.corr2 = zeros(size(handles.AOIEstimateRegion,1), size(handles.AOIEstimateRegion,1));
+   
+   %La segunda búsqueda tendrá un paso de un sólo pixel y recorrerá el
+   %cuadrado de pequeñas dimensiones definido anteriormente.
+   iterationx = 0;
+   for(centerx = handles.AOIEstimateRegion(1):handles.AOIEstimateRegion(3))
+        iterationx = iterationx+1;
+        iterationy = 0;
+        for(centery = handles.AOIEstimateRegion(2):handles.AOIEstimateRegion(4))
+            iterationy = iterationy+1;
+
+    %       Crear la imagen o máscara igual que el AOI manual con centro
+    %       en la posición (x,y). Obtener la corr2 entre esta y el AOI manual
+    %       de la imagen anterior y guardar el resultado en la posicion (x,y)
+    %       de handles.corr
+
+           [x,y]=meshgrid(-(centerx-1):(ix-centerx),-(centery-1):(iy-centery));
+           handles.maskCorr =((x.^2+y.^2)<=handles.AOIRadius^2);
+           handles.AOIImageCorr = (double(handles.image)).*(handles.maskCorr);
+
+    %       Copiar en una nueva matriz solo los valores distintos de 0 de
+    %       ambas imagenes de AOI para el corr2, si no no va a funcionar
+           
+           try
+               
+               handles.AOIImageCorr = handles.AOIImageCorr(centery-handles.AOIRadius+1:centery+handles.AOIRadius,centerx-handles.AOIRadius+1:centerx+handles.AOIRadius);
+               
+               %Si se han ejecutado X iteraciones del callback del tracking o
+               %un multiplo, utilizar la imagen con AOI "inicial" para corregir
+               %así las derivas.
+               if(mod(handles.trackingIterations,30)==0)
+                   handles.AOIImageCut = handles.iniAOIImage(handles.iniAOICentery-handles.AOIRadius+1:handles.iniAOICentery+handles.AOIRadius,handles.iniAOICenterx-handles.AOIRadius+1:handles.iniAOICenterx+handles.AOIRadius);
+               else
+                   handles.AOIImageCut = handles.AOIImage(handles.AOICentery-handles.AOIRadius+1:handles.AOICentery+handles.AOIRadius,handles.AOICenterx-handles.AOIRadius+1:handles.AOICenterx+handles.AOIRadius);
+               end
+               
+               %handles.AOIImageCorr2(iterationy, iterationx) = handles.AOIImageCorr(centery-handles.AOIRadius+1:centery+handles.AOIRadius,centerx-handles.AOIRadius+1:centerx+handles.AOIRadius);
+               %handles.AOIImageCut(iterationy, iterationx) = handles.AOIImage(handles.AOICentery-handles.AOIRadius+1:handles.AOICentery+handles.AOIRadius,handles.AOICenterx-handles.AOIRadius+1:handles.AOICenterx+handles.AOIRadius);
+
+               handles.corr2(iterationy, iterationx) = corr2(handles.AOIImageCut, handles.AOIImageCorr);
+           catch exception
+           end
+       end
+    end
+
+    %Al finalizar el recorrido, la nueva AOI se colocará en la
+    %posición con mayor correlación con respecto a la de la anterior imagen
+    %(sólo se modifica la posición, no la forma de la AOI). Si ninguna de las
+    %posiciones utilizadas supera un cierto umbral de correlación, se debe
+    %agrandar la región de búsqueda y volver a recorrer la región (parcial o
+    %totalmente).
+    
+    [c, idx ] = max(handles.corr2(:));
+    [deltay, deltax] = ind2sub( size(handles.corr2), idx );
+    maxCorrY = maxCorrYEst-pixelStep-1+deltay;
+    maxCorrX = maxCorrXEst-pixelStep-1+deltax;
+    %maxCorrY = maxCorrY*pixelStep+(handles.AOISearchRegion(2)+handles.AOIRadius)-pixelStep;
+    %maxCorrX = maxCorrX*pixelStep+(handles.AOISearchRegion(1)+handles.AOIRadius)-pixelStep;
+
+    %Si el maximo de todas las correlaciones obtenidas supera cierto umbral se
+    %considera que se ha encontrado el objeto. Se actualiza el valor de las
+    %coordenadas del centro del AOI, se genera la nueva máscara y la nueva
+    %imagen con sólo el AOI y se vuelve a pintar el contorno del AOI en la
+    %imagen.
+    if(max(max(handles.corr))>handles.corrThreshold)
+       handles.AOICenterx = maxCorrX;
+       handles.AOICentery = maxCorrY;
+       [x,y]=meshgrid(-(handles.AOICenterx-1):(ix-handles.AOICenterx),-(handles.AOICentery-1):(iy-handles.AOICentery));
+       handles.mask =((x.^2+y.^2)<=handles.AOIRadius^2);
+       handles.AOIImage = (double(handles.image)).*(handles.mask);
+
+       handles.AOIFound = 1;
+       
+       %Si está activado el control de saturacion, con cada imagen que se tome
+       %deberia obtenerse el histograma, calcularse el % de pixeles saturados (en
+       %los ultimos ragos del histograma), y se comprueba si se supera un umbral
+       %de saturacion. Mostrar el % de pixeles saturados en alguna parte.
+       %Si se supera dicho umbral, ejecutar una rutina para solucionar la
+       %saturacion (o preguntar al usuario si la quiere ejecutar).
+       if(handles.satControlState)
+           satControlCallback(hObject, eventdata);
+
+           handles = guidata(hObject);
+
+           %Crear la cadena de caracteres para mostrar en la interfaz el
+           %porcentaje de pixeles saturados del total del AOI y actualizar dicho
+           %texto en el interfaz.
+           string = strcat(handles.fixtextsatPixels, {' '}, num2str(handles.percSat, '%.2f'), '%');
+           set(handles.satPixelText, 'String', string); drawnow;
+       end
+
+       %Si está activado el control de AOI por encima del fondo de ruido, se llama
+       %al callback de control correspondiente con cada iteracion del tracking
+       if(handles.backNoiseState)
+           backNoiseControlCallback(hObject, eventdata);
+           handles = guidata(hObject);
+        end
+
+       %Si está activada la medida de potencia, se ejecuta el callback de medida
+       %de potencia
+       if(handles.measPotState)
+           measAOIPot_Callback(hObject, eventdata, handles);
+           handles = guidata(hObject);
+       end
+       
+    else
+
+        handles.AOIFound = 0;
+
+        if(handles.lastSearch)
+            %Anunciar que no se ha encontrado el AoI tras recorrer la imagen
+            %completa
+            handles.AOIWarning = warndlg('Warning. AOI not found. If spot is correctly seen, try again.','AOI not found','replace');
+        else
+            %Aumentar al doble las dimensiones de la región de búsqueda y
+            %modificar el paso en el bucle de calculo de la correlación.
+            handles.searchRegionDim = handles.searchRegionDim*2;
+            pixelStep = pixelStep*2;
+        end
+    end
+    
+    first = 0;
+    
+end
+
+%El paso para la búsqueda debe ser lo suficientemente pequeño como para
+%tener precisión en la búsqueda, pero lo suficientemente grande como para
+%que el recorrido de la región de búsqueda se haga de forma rápida.
+
+%Actualizar los ejes con la imagen y el AOI
+
+%Actualizar cameraAxes con la imagen (evita que se pinten varias AOI sobre
+%la misma imagen)
+if(get(handles.axisSwitch, 'Value'))
+    set(0, 'CurrentFigure', AjusteSatTA);
+    contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0, 'Parent', handles.cameraAxes);
+else
+    set(groot, 'CurrentFigure', handles.AjusteSatTA);
+    imagesc(handles.image, 'Parent', handles.cameraAxes);
+end
+set(handles.cameraAxes,'nextplot','replacechildren');
+colormap(jet);
+axis xy
+axis on
+
+%Intentar hacer un plot en la figura del AOI encontrada manteniendo la
+%imagen
+hold(handles.cameraAxes, 'on')
+if(handles.axisMicrons)
+    viscircles([handles.AOICenterx.*(max(handles.axisXum)/maxX), handles.AOICentery.*(max(handles.axisYum)/maxY)], handles.AOIRadius.*(max(handles.axisXum)/320), 'EdgeColor', 'k','LineWidth', 2);
+else
+    viscircles([handles.AOICenterx, handles.AOICentery], handles.AOIRadius, 'EdgeColor', 'k','LineWidth', 2);
+end
+hold(handles.cameraAxes, 'off')
+set(handles.cameraAxes,'nextplot','replacechildren');
+axis xy
+axis on
+
+flushdata(handles.vid);
+
+%Poner el texto "State" a "Ok" y actualizar la estructura handles
+set(handles.cameraControlState,'String', 'Ok');
+
+guidata(hObject, handles);
+
+
+    % ---------- Timed Callbacks end ----------
 
 %
 % ---------- Tracking functions end ----------
@@ -1262,13 +1640,15 @@ function axisSwitch_Callback(hObject, eventdata, handles)
 %Poner el texto "State" a "Busy..."
 set(handles.cameraControlState,'String', 'Busy...'); drawnow;
 
+handles.axisMicrons = get(hObject,'Value');
+
 %Según el estado del botón, se deben tener los ejes X e Y en pixeles o en
 %micras.
 try
     %Si el botón está pulsado se hace un contourf con los ejes en micras y
     %se cambia el texto del botón para indicar que al volver a pulsar se
     %cambiará a eje en píxeles
-    if(get(hObject,'Value'))
+    if(handles.axisMicrons)
         set(handles.cameraAxes,'nextplot','replace');
         contourf(handles.axisXum, handles.axisYum, handles.image, 70, 'LineWidth', 0, 'Parent', handles.cameraAxes);
         colormap(jet);
@@ -1292,10 +1672,12 @@ try
         set(handles.cameraAxes,'nextplot','replacechildren');
     end
 catch exception
-    if get(hObject,'Value') == get(hObject,'Max')
+    if handles.axisMicrons == get(hObject,'Max')
         set(hObject,'Value', 0);
+        handles.axisMicrons = 0;
     else
         set(hObject,'Value', 1);
+        handles.axisMicrons = 1;
     end
     exception.message
     h = msgbox('Error. Impossible to switch axis to microns or pixels.','Axis to microns error','error');
@@ -1337,25 +1719,25 @@ handles.IoPot = integrateImage(handles.AOIimageIo);
 %Switch para calcular y representar la potencia en las unidades
 %correspondientes
 switch handles.potUnit
-    case 'Power in AOI (uW)'
+    case 'Power in AoI (uW)'
         %Calcular la potencia en el AOI (en microWattios) siguiendo la fórmula:
         % Potencia(uW) = 1000*K*(I-Io)/(G*TA(s))
         handles.potFiberuW = 1e3*handles.K*(handles.spotPot-handles.IoPot)/(handles.src.Gain*(1e6*handles.src.ExposureTime));
 
         %Crear la cadena de caracteres para mostrar en la interfaz la potencia
         %medida y actualizar dicho texto en el interfaz.
-        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberuW, '%.5g'), 'uW');
+        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberuW, '%.5g'), ' uW');
         set(handles.potAOIText, 'String', string);
-   case 'Energy in AOI'
+   case 'Energy in AoI (J)'
         %Calcular la energía en el AOI (en microJulios) siguiendo la fórmula:
         %Energia(J) = 1000*K*(I-Io)/(G*1e6)
         handles.potFiberJ = 1e3*handles.K*(handles.spotPot-handles.IoPot)/(handles.src.Gain*1e6);
 
         %Crear la cadena de caracteres para mostrar en la interfaz la
         %energia medida y actualizar dicho texto en el interfaz.
-        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberJ, '%.5g'), 'J');
+        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberJ, '%.5g'), ' J');
         set(handles.potAOIText, 'String', string);
-   case 'Photons in AOI' 
+   case 'Photons in AoI'
         %Calcular los fotones en el AOI siguiendo la fórmula:
         %Fotones = 1000*K*(I-Io)/(G*E(de 1un photon))
         %handles.potFiberPhotons = 1e3*handles.K*(handles.spotPot-handles.IoPot)/(handles.src.Gain*(h*c/lambda));
@@ -1363,9 +1745,9 @@ switch handles.potUnit
 
         %Crear la cadena de caracteres para mostrar en la interfaz la potencia
         %medida y actualizar dicho texto en el interfaz.
-        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberPhotons, '%.4g'), 'Photons');
+        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberPhotons, '%.4g'), ' Photons');
         set(handles.potAOIText, 'String', string);
-   case 'Power Density (uW/um^2)'
+   case 'Power Density in AoI (uW/um^2)'
         %Calcular la densidad de potencia en el AOI (en microWattios por
         %micrómetro cuadrado) siguiendo la fórmula:
         %Densidad de potencia(uW/um^2) = 1000*K*(I-Io)/(G*Area(um^2)
@@ -1379,7 +1761,7 @@ switch handles.potUnit
 
         %Crear la cadena de caracteres para mostrar en la interfaz la potencia
         %medida y actualizar dicho texto en el interfaz.
-        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberuWum2, '%.3e'), 'uW/um^2');
+        string = strcat(handles.fixtextMeasAOIPot, {' '}, num2str(handles.potFiberuWum2, '%.3e'), ' uW/um^2');
         set(handles.potAOIText, 'String', string);
 end
 
