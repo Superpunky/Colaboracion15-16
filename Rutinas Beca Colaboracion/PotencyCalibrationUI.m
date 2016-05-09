@@ -107,7 +107,6 @@ function getImageIo_Callback(hObject, eventdata, handles)
 set(handles.getImageIo,'Enable', 'off');
 handles.imageIo = getsnapshot(handles.vid);
 handles.Io = sum(sum(handles.imageIo))/numel(handles.imageIo);
-%integrateImage(handles.imageIo);
 
 %Se obtiene el texto fijo y se concatena con el resultado obtenido.
 handles.fixtext = get(handles.IoText,'String');
@@ -185,8 +184,8 @@ function calibratePot_Callback(hObject, eventdata, handles)
 
 try
     
-    %Se obtiene el área de la imagen del spot que contiene el 99% de potencia
-    [handles.AOIcontourCal, handles.maskCal, handles.distCal] = pottoareacircleUI(handles.imageSpot, 99);
+    %Se obtiene el área de la imagen del spot que contiene el 99.999% de potencia
+    [handles.AOIcontourCal, handles.maskCal, handles.distCal] = pottoareacircleUI(handles.imageSpot, 99.999);
     
     %Se obtienen los diámetros en X e Y del AOI y se genera la cadena de
     %caracteres para mostrar en la interfaz dichos datos
@@ -265,6 +264,15 @@ function potFiberText_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+
+% --- Executes on button press in savePotCal.
+function savePotCal_Callback(hObject, eventdata, handles)
+% hObject    handle to savePotCal (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+PotencyCalibrationUI_CloseRequestFcn(PotencyCalibrationUI, eventdata, handles)
+
 % --- Función encargada de integrar la "potencia"(valor de pixel acumulado)
 %en una imagen
 function P = integrateImage(image)
@@ -282,18 +290,8 @@ function PotencyCalibrationUI_CloseRequestFcn(hObject, eventdata, handles)
 
 % Hint: delete(hObject) closes the figure
 
-asd = 'asd'
 set(handles.AjusteSatTA,'UserData', handles);
 %Parar la Preview en ventana principal
 stoppreview(handles.vid);
 
 delete(hObject);
-
-
-% --- Executes on button press in savePotCal.
-function savePotCal_Callback(hObject, eventdata, handles)
-% hObject    handle to savePotCal (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-PotencyCalibrationUI_CloseRequestFcn(PotencyCalibrationUI, eventdata, handles)

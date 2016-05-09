@@ -22,7 +22,7 @@ function varargout = SpatialCalibrationUI(varargin)
 
 % Edit the above text to modify the response to help SpatialCalibrationUI
 
-% Last Modified by GUIDE v2.5 01-Apr-2016 13:05:24
+% Last Modified by GUIDE v2.5 27-Apr-2016 10:56:25
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -60,6 +60,10 @@ if ~isempty(handles.mainFig)
     data = guidata(handles.mainFig);
     handles = catstructmod(data, handles);
 end
+
+handles.distanceXum = 0;
+handles.distanceYum = 0;
+handles.distanceum = 0;
 
 handles.fixDistanceText = 'Distance between points in pixels:';
 
@@ -130,15 +134,20 @@ set(handles.getPoints,'Enable', 'off');
 %correspondientes funciones de la api cuando el usuario fije los puntos
 %(pulsando intro o algo así, parecido a lo que hizo iñigo).
 handles.SpatialCalFig = figure();
-imagesc(handles.imageSpatialCalibration); colormap(jet);
+imagesc(handles.imageSpatialCalibration); colormap(jet); axis xy;
 h = imdistline(gca);
 handles.api = iptgetapi(h); %No se puede acceder a api desde fuera de la funcion. Utilizar handles o guidata o algo.
+
+handles.saveSpatialCalButton = uicontrol('Style', 'pushbutton', 'String', 'Save',...
+        'Position', [20 12 60 30],...
+        'Callback', {@medir_distancia_callback, handles}, 'Parent', handles.SpatialCalFig); 
 
 set(handles.SpatialCalFig,'keypressfcn',{@medir_distancia_callback, handles});
 uiwait(handles.SpatialCalFig);
 
 data = get(handles.SpatialCalibrationUI,'UserData');
 handles = catstructmod(handles, data);
+set(handles.SpatialCalibrationUI, 'UserData', '');
 
 %Si se presiona la tecla correcta se bloquea el objeto imdistline, se
 %obtiene la distancia o la posición, y palante.
@@ -150,9 +159,11 @@ handles = catstructmod(handles, data);
 %handles.x1 = x1; handles.y1 = y1; handles.x2 = x2; handles.y2 = y2;
 if(ishandle(handles.SpatialCalFig))
 %¿Habilitar los botones cuando se pulsa o cuando se seleccionan los puntos?
-    set(handles.distanceGet,'Enable', 'on');
-    set(handles.distanceXText,'Enable', 'on');
-    set(handles.distanceYText,'Enable', 'on');
+    set(handles.relativeCoordGet, 'Enable', 'on');
+    set(handles.distanceXText, 'Enable', 'on');
+    set(handles.distanceYText, 'Enable', 'on');
+    set(handles.distanceGet, 'Enable', 'on');
+    set(handles.distanceText, 'Enable', 'on');
 else
     restartSpatialCal_Callback(hObject, eventdata, handles)
 end
@@ -161,9 +172,13 @@ end
 guidata(hObject, handles);
 
 function medir_distancia_callback(hObject, eventdata, handles)
-
+triggerClass = class(hObject);
+if(strcmp(triggerClass,'matlab.ui.Figure'))
 %Se obtiene la tecla pulsada que ha activado el callback
-tecla=get(hObject,'currentkey');
+    tecla=get(hObject,'currentkey');
+else
+    tecla = '';
+end
 
 %Si la tecla pulsada es "intro", se obtiene la distancia y la posicion de
 %imdistline con su api. Las posiciones de inicio y fin de la linea se
@@ -172,8 +187,8 @@ tecla=get(hObject,'currentkey');
 %pulsación de una tecla para que no se vuelva a ejecutar, se elimina la api
 %y el objeto imdistline, y se envía un resume para que continue la
 %ejecución normal.
-if(strcmp(tecla,'return'))
-    dist = handles.api.getDistance();
+if(strcmp(tecla,'return')||strcmp(triggerClass,'matlab.ui.control.UIControl'))
+    handles.distancepix = handles.api.getDistance();
     pos = handles.api.getPosition(); %pos = [X1 Y1; X2 Y2]
     handles.X1 = pos(1,1); handles.Y1 = pos(1,2); handles.X2 = pos(2,1); handles.Y2 = pos(2,2);
     hold on;
@@ -182,6 +197,11 @@ if(strcmp(tecla,'return'))
     hold off;
     set(handles.SpatialCalFig,'keypressfcn','');
     handles.api.delete();
+    if(strcmp(triggerClass,'matlab.ui.control.UIControl'))
+        set(hObject, 'Enable', 'off');
+    else
+        set(handles.saveSpatialCalButton, 'Enable', 'off');
+    end
     uiresume(handles.SpatialCalFig);
 end
 
@@ -191,11 +211,13 @@ set(handles.SpatialCalibrationUI,'UserData', handles);
 %guidata(hObject, handles);
 
 
-% --- Executes on button press in distanceGet.
-function distanceGet_Callback(hObject, eventdata, handles)
-% hObject    handle to distanceGet (see GCBO)
+% --- Executes on button press in relativeCoordGet.
+function relativeCoordGet_Callback(hObject, eventdata, handles)
+% hObject    handle to relativeCoordGet (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+handles.relativeCoord = 1;
 
 %Obtener los valores introducidos en los cajetines de texto distanceXText
 handles.distanceXum = str2double(get(handles.distanceXText,'String'));
@@ -207,18 +229,52 @@ handles.distanceYum = str2double(get(handles.distanceYText,'String'));
 if(isnan(handles.distanceXum)||(~isreal(handles.distanceXum)))
     set(handles.distanceXText,'String', '');
     rmfield(handles, 'distanceXum');
-    h = msgbox('Error. Not a valid distance value. Must be a real number.','Invalid pot. value','error');
-    
+    h = msgbox('Error. Not a valid distance value. Must be a real number.','Invalid value','error');
 elseif(isnan(handles.distanceYum)||(~isreal(handles.distanceYum)))
     set(handles.distanceYText,'String', '');
     rmfield(handles, 'distanceYum');
-    h = msgbox('Error. Not a valid distance value. Must be a real number.','Invalid pot. value','error');
+    h = msgbox('Error. Not a valid distance value. Must be a real number.','Invalid value','error');
 %Si los valores son valores adecuados se deshabilitan el botón y los
 %cajetines de texto, y se habilita el siguiente botón.
 else
+    set(handles.relativeCoordGet,'Enable', 'off');
     set(handles.distanceXText,'Enable', 'off');
     set(handles.distanceYText,'Enable', 'off');
     set(handles.distanceGet,'Enable', 'off');
+    set(handles.distanceText,'Enable', 'off');
+    set(handles.calibrateSpatial,'Enable', 'on');
+end
+
+%Actualizar la estructura handles.
+guidata(hObject, handles);
+
+
+% --- Executes on button press in distanceGet.
+function distanceGet_Callback(hObject, eventdata, handles)
+% hObject    handle to distanceGet (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+handles.relativeCoord = 0;
+
+%Obtener los valores introducidos en los cajetines de texto distanceXText
+handles.distanceum = str2double(get(handles.distanceText,'String'));
+
+%Si no se introdujo nada o si no es un número real se pone el cajetín
+%vacío, se borra el campo de la estructura handles y se genera un mensaje
+%de error.
+if(isnan(handles.distanceum)||(~isreal(handles.distanceum)))
+    set(handles.distanceText,'String', '');
+    rmfield(handles, 'distanceum');
+    h = msgbox('Error. Not a valid distance value. Must be a real number.','Invalid value','error');
+%Si los valores son valores adecuados se deshabilitan el botón y los
+%cajetines de texto, y se habilita el siguiente botón.
+else
+    set(handles.relativeCoordGet,'Enable', 'off');
+    set(handles.distanceXText,'Enable', 'off');
+    set(handles.distanceYText,'Enable', 'off');
+    set(handles.distanceGet,'Enable', 'off');
+    set(handles.distanceText,'Enable', 'off');
     set(handles.calibrateSpatial,'Enable', 'on');
 end
 
@@ -236,21 +292,31 @@ function calibrateSpatial_Callback(hObject, eventdata, handles)
 
 try
     T = 30;
-    handles.distanceXpix = abs(handles.X1-handles.X2);
-    handles.distanceYpix = abs(handles.Y1-handles.Y2);
-    handles.magX = 0; handles.magY = 0;
-    if(handles.distanceXum ~= 0)
-        handles.magX = (handles.distanceXpix*T)/handles.distanceXum;
-    end
-    if(handles.distanceYum ~= 0)
-    handles.magY = (handles.distanceYpix*T)/handles.distanceYum;
+    if(handles.relativeCoord)
+        handles.distanceXpix = abs(handles.X1-handles.X2);
+        handles.distanceYpix = abs(handles.Y1-handles.Y2);
+        handles.magX = 0; handles.magY = 0;
+        if(handles.distanceXum ~= 0)
+            handles.magX = (handles.distanceXpix*T)/handles.distanceXum;
+        end
+        if(handles.distanceYum ~= 0)
+            handles.magY = (handles.distanceYpix*T)/handles.distanceYum;
+        else
+            handles.magY = handles.magX;
+        end
+        if(handles.magX == 0)
+            handles.magX = handles.magY;
+        end
+    else
+        handles.magX = (handles.distancepix*T)/handles.distanceum;
+        handles.magY = handles.magX;
     end
     
     %Ejes en píxeles
     handles.axisXpix = 1:handles.xlim(2);
     handles.axisYpix = 1:handles.ylim(2);
     %Ejes en micras = ejes en pixeles*tamaño en pixeles(T)*magnificacion
-    if((handles.distanceXum ~= 0)||(handles.distanceYum ~= 0))
+    if((handles.distanceXum ~= 0)||(handles.distanceYum ~= 0)||(handles.distanceum ~= 0))
         if((handles.distanceXum ~= 0)&&(handles.distanceYum ~= 0))
             handles.axisXum = linspace(0, (handles.xlim(2)-1)*T/handles.magX, handles.xlim(2));
             handles.axisYum = linspace(0, (handles.ylim(2)-1)*T/handles.magY, handles.ylim(2));
@@ -261,19 +327,25 @@ try
             handles.axisXum = linspace(0, (handles.xlim(2)-1)*T/handles.magY, handles.xlim(2));
             handles.axisYum = linspace(0, (handles.ylim(2)-1)*T/handles.magY, handles.ylim(2));
         end
+        
     else
         %Se lanza una excepción para hacer un restart y mostrar el mensaje
         %de error por pantalla.
         throw(exception);
     end
-    %Se crea un vector de resultados con todos los datos interesantes de la
-    %calibración ()
-    handles.resultsSpatialCal = {handles.X1, handles.X2, handles.distanceXpix, 30, handles.magX, handles.magY;
-        handles.Y1, handles.Y2, handles.distanceYpix, '', '', ''}';
-    %Se carga el vector de resultados en la tabla spatialCalResults, se
-    %deshabilita el botón y se habilita el de reset de la calibración.
-    set(handles.spatialCalResults,'data', []);
-    set(handles.spatialCalResults,'data', handles.resultsSpatialCal);
+    
+    %Mostrar el texto con las magnificaciones
+    set(handles.magXText,'String', num2str(handles.magX, '%.2f'));
+    set(handles.magYText,'String', num2str(handles.magY, '%.2f'));
+%     %Se crea un vector de resultados con todos los datos interesantes de la
+%     %calibración ()
+%     handles.resultsSpatialCal = {handles.X1, handles.X2, handles.distanceXpix, 30, handles.magX, handles.magY;
+%         handles.Y1, handles.Y2, handles.distanceYpix, '', '', ''}';
+%     %Se carga el vector de resultados en la tabla spatialCalResults, se
+%     %deshabilita el botón y se habilita el de reset de la calibración.
+%     set(handles.spatialCalResults,'data', []);
+%     set(handles.spatialCalResults,'data', handles.resultsSpatialCal);
+
     set(handles.calibrateSpatial,'Enable', 'off');
     set(handles.restartSpatialCal,'Enable', 'on');
     set(handles.saveSpatialCal,'Enable', 'on');
@@ -308,7 +380,7 @@ set(handles.getImageSpatialCalibration,'Enable', 'on');
 set(handles.getPoints,'Enable', 'off');
 set(handles.distanceXText,'Enable', 'off');
 set(handles.distanceYText,'Enable', 'off');
-set(handles.distanceGet,'Enable', 'off');
+set(handles.relativeCoordGet,'Enable', 'off');
 set(handles.calibrateSpatial,'Enable', 'off');
 set(handles.restartSpatialCal,'Enable', 'off');
 
@@ -358,6 +430,40 @@ function distanceYText_Callback(hObject, eventdata, handles)
 % --- Executes during object creation, after setting all properties.
 function distanceYText_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to distanceYText (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+% --- Executes during object creation, after setting all properties.
+function distanceText_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to distanceYText (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+function distanceText_Callback(hObject, eventdata, handles)
+% hObject    handle to distanceTag (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of distanceTag as text
+%        str2double(get(hObject,'String')) returns contents of distanceTag as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function distanceTag_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to distanceTag (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
