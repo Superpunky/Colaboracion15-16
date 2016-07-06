@@ -1,4 +1,4 @@
-function Dibuja_circulos_interactivos_bis
+function Dibuja_circulos_interactivos_bis(handles)
 % Es una subrutina que permite dibujar una circunferencia en la ventana activa y
 % luego cambiarle la posicion del centro y su radio de forma grafica
 % (pinchando en el centro o en la circunferencia y arrastrando con el
@@ -35,6 +35,7 @@ set(Fig1,'WindowButtonDownFcn', @ButtonDownFcn_Figure); % Activa la funcion de d
 set(Centro,'ButtonDownFcn', @startDragFcn_Centro);  % Activa la funcion de deteccion de click del raton sobre el Centro
 set(Circulo,'ButtonDownFcn', @startDragFcn_Circulo);   % Activa la funcion de deteccion de click del raton sobre el Circulo 
 set(Fig1,'keypressfcn',@lee_tecla);   % Activa la funcion de deteccion de que se pulsa el teclado cuando se esta sobre la figura
+%set(handles.defineAOI,'keypressfcn',@lee_tecla);   % Activa la funcion de deteccion de que se pulsa el teclado cuando el focus lo tiene el boton designado
 %isempty(get(Fig1, 'keypressfcn'))
  % Funcion activada cuando se pulsa sobre la Figura
      function ButtonDownFcn_Figure(varargin)
@@ -54,6 +55,7 @@ set(Fig1,'keypressfcn',@lee_tecla);   % Activa la funcion de deteccion de que se
             set(Circulo,'Xdata',[real(Z)],'Ydata', [imag(Z)],'linestyle', '-');
             set(Centro,'Xdata',[real(Zo)],'Ydata', [imag(Zo)],'Marker','+','MarkerSize',8);            
         end
+        %uicontrol(handles.defineAOI); %Lleva el foco a un botón del interfaz, para evitar que al pulsar intro aparezca la ventana de comandos de Matlab
      end
  
  % Funciones activadas cuando se pulsa sobre el Centro
@@ -67,7 +69,8 @@ set(Fig1,'keypressfcn',@lee_tecla);   % Activa la funcion de deteccion de que se
         % despues de haber pulsado sobre el objeto Centro
         pt=get(Ax1,'currentpoint');                              % Lee la posicion del mouse sobre los ejes
         x0=pt(1,1); y0=pt(2,2); Zo=x0+j*y0;                % Calcula la posicion del centro en el plano complejo
-        set(gco,'Xdata',[x0],'Ydata', [y0],'linestyle', '-');                     % Situa el objeto actual (el Centro) en la posicion del cursor
+        %set(gco,'Xdata',[x0],'Ydata', [y0],'linestyle', '-');                     % Situa el objeto actual (el Centro) en la posicion del cursor
+        set(Centro,'Xdata',[x0],'Ydata', [y0],'linestyle', '-');                     % Situa el objeto actual (el Centro) en la posicion del cursor
         %  Recalcula el circulo para que se mueva con el Centro
         Z=Zo+r*exp(j*teta);
         set(Circulo,'Xdata',[real(Z)],'Ydata', [imag(Z)],'linestyle', '-');
@@ -89,7 +92,8 @@ set(Fig1,'keypressfcn',@lee_tecla);   % Activa la funcion de deteccion de que se
         r=abs(Zo-Zm);                                                  % Calcula el radio de la nueva circunferencia
         %  Recalcula el Circulo con su nuevo radio
         Z=Zo+r*exp(j*teta);
-        set(gco,'Xdata',[real(Z)],'Ydata', [imag(Z)]);
+        %set(gco,'Xdata',[real(Z)],'Ydata', [imag(Z)]);
+        set(Circulo,'Xdata',[real(Z)],'Ydata', [imag(Z)]);
         %Circulo=line(real(Z),imag(Z),...
         %    'color', 'red',...
         %  'linewidth', 2);
@@ -99,13 +103,18 @@ set(Fig1,'keypressfcn',@lee_tecla);   % Activa la funcion de deteccion de que se
  % Funcion activada cuando se suelta el boton del raton sobre cualquiera de los objetos (Figura, Centro o Circulo
     function stopDragFcn(varargin)
         % Callback que se ejecuta cuando se suelta el boton del mouse sobre la ventana
-        set(Fig1,'WindowButtonMotionFcn','');   % Deshabilita el callback que se ejecuta cuando se mueve el cursor sobre la ventana 
+        set(Fig1,'WindowButtonMotionFcn','');   % Deshabilita el callback que se ejecuta cuando se mueve el cursor sobre la ventana
+        %uicontrol(handles.defineAOI); %Lleva el foco a un botón del interfaz, para evitar que al pulsar intro aparezca la ventana de comandos de Matlab
     end
 
 % Funcion activada cuando se pulsa el teclado para salir
     function tecla=lee_tecla(hObject, callbackdata)
+        % Traer la figura al frente para evitar que la ventana de comandos
+        % de Matlab lo haga.
+        figure(Fig1);
         % Cancela la llamada a todos los callbacks llamados por el mouse o el keyboard 
         set(Fig1,'keypressfcn','')
+        %set(handles.defineAOI,'keypressfcn','')
         set(Fig1,'WindowButtonDownFcn','');
         set(Centro,'ButtonDownFcn','');
         set(Circulo,'ButtonDownFcn','');
@@ -113,6 +122,7 @@ set(Fig1,'keypressfcn',@lee_tecla);   % Activa la funcion de deteccion de que se
         
         tecla=get(hObject,'currentkey'); % Captura la tecla que se ha pulsado.  Si se pulsa la tecla escape se borra el circulo y no se guardan los datos de radio y centro
         %  para cualquier otra tecla se guardan los datos y no se borra el circulo
+        %tecla=get(handles.defineAOI,'currentkey');
         if strcmp(tecla,'escape')
             delete (Centro)
             delete (Circulo)

@@ -106,9 +106,24 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
+
+% --- Executes during object creation, after setting all properties.
+function potFiberText3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to potFiberText3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
 function potFiberText1_Callback(hObject, eventdata, handles)
 
 function potFiberText2_Callback(hObject, eventdata, handles)
+
+function potFiberText3_Callback(hObject, eventdata, handles)
 
 
 %--------------------------------------------------------------------
@@ -227,11 +242,60 @@ if(isnan(handles.potFiberdBm2)||(~isreal(handles.potFiberdBm2)))
 else
     set(handles.potFiberText2,'Enable', 'off');
     set(handles.potFiberGet2,'Enable', 'off');
-    set(handles.calibratePot,'Enable', 'on');
+    set(handles.getSpotImage3,'Enable', 'on');
     %Se resta la reflexión de Fresnel (Pot. trans. 96% de la incidente)
     handles.potFiberdBm2 = handles.potFiberdBm2 - 0.177;
     %Comprobar calculo con medidor de potencia del laser
     handles.potCalFibermW2 = (10^(handles.potFiberdBm2/10));
+end
+
+%Actualizar la estructura handles.
+guidata(hObject, handles);
+
+% --- Executes on button press in getSpotImage3.
+function getSpotImage3_Callback(hObject, eventdata, handles)
+% hObject    handle to getSpotImage3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+%Deshabilitar el propio botón, capturar la imagen con el spot, habilitar el
+%siguiente botón y su cajetín de texto (siguiente paso de la calibración).
+set(handles.getSpotImage3,'Enable', 'off');
+handles.imageSpot3 = getsnapshot(handles.vid);
+set(handles.potFiberGet3,'Enable', 'on');
+set(handles.potFiberText3,'Enable', 'on');
+
+%Actualizar la estructura handles.
+guidata(hObject, handles);
+
+% --- Executes on button press in potFiberGet3.
+function potFiberGet3_Callback(hObject, eventdata, handles)
+% hObject    handle to potFiberGet3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+%Obtener el valor introducido en el cajetín de texto potFiberText1
+handles.potFiberdBm3 = str2double(get(handles.potFiberText3,'String'));
+
+%Si no se introdujo nada o si no es un número real se pone el cajetín
+%vacío, se borra el campo de la estructura handles y se genera un mensaje
+%de error.
+if(isnan(handles.potFiberdBm3)||(~isreal(handles.potFiberdBm3)))
+    set(handles.potFiberText3,'String', '');
+    rmfield(handles, 'potFiberText3');
+    h = msgbox('Error. Not a valid potency value. Must be a real number.','Invalid pot. value','error');
+    
+%Si el valor es un valor adecuado se deshabilitan el botón y el cajetín de
+%texto, se habilita el siguiente botón, y se adecúa el valor indicado al
+%real en el plano de la punta de la fibra.
+else
+    set(handles.potFiberText3,'Enable', 'off');
+    set(handles.potFiberGet3,'Enable', 'off');
+    set(handles.calibratePot,'Enable', 'on');
+    %Se resta la reflexión de Fresnel (Pot. trans. 96% de la incidente)
+    handles.potFiberdBm3 = handles.potFiberdBm3 - 0.177;
+    %Comprobar calculo con medidor de potencia del laser
+    handles.potCalFibermW3 = (10^(handles.potFiberdBm3/10));
 end
 
 %Actualizar la estructura handles.
@@ -300,7 +364,7 @@ try
     %calibración (valor de pixel acumulado en el area de la imagen con
     %spot, valor de pixel acumulado en el area de la imagen de corriente de
     %oscuridad, tiempo de apertura, ganancia, potencia en uW y cte. K)
-    handles.resultsPotCal = {handles.potFiberdBm1, handles.potFiberdBm2, handles.spotPot1, handles.spotPot2, handles.IoPot1, handles.IoPot2, handles.K, handles.slope}';
+    handles.resultsPotCal = {handles.spotPot1 ,handles.spotPot2, handles.IoPot1, handles.IoPot2 , handles.K, handles.slope}';
     
     %Se carga el vector de resultados en la tabla potCalResultsTable, se
     %deshabilita el botón y se habilita el de reset de la calibración.
@@ -382,9 +446,11 @@ calType = 'Power';
 imageIo = handles.imageIo;
 imageSpot1 = handles.imageSpot1;
 imageSpot2 = handles.imageSpot2;
+imageSpot3 = handles.imageSpot3;
 potFiberdBm1 = handles.potFiberdBm1;
 potFiberdBm2 = handles.potFiberdBm2;
-uisave({'calType','imageIo','imageSpot1','potFiberdBm1','imageSpot2','potFiberdBm2'},'PowerCalibrationVars');
+potFiberdBm3 = handles.potFiberdBm3;
+uisave({'calType','imageIo','imageSpot1','potFiberdBm1','imageSpot2','potFiberdBm2','imageSpot3','potFiberdBm3'},'PowerCalibrationVars');
 
 guidata(hObject, handles);
 

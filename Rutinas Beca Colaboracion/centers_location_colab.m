@@ -22,7 +22,7 @@
 
 function [centers, maxpix] = centers_location_colab(image)
 
-warning off all;
+%warning off all;
 radiusrange = [10 100];
 centers = imfindcircles(image, radiusrange);
 maxpix = double(image(round(centers(2)), round(centers(1))));

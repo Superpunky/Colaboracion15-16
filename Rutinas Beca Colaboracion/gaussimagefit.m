@@ -23,7 +23,6 @@
 
 function [backnoise, sigmax, sigmay] = gaussimagefit(image, mux, muy, maxpix)
 
-
 %expr = 'image = (maxpix-backnoise)*exp(-(x-mux)^2/(2*sigmax^2)-(y-muy)^2/(2*sigmay^2))+backnoise';
 
 [ymax xmax] = size(image);
@@ -39,12 +38,15 @@ ffun2 = fittype( 'maxpix*exp(-(X-mux).^2/(2*sigmax^2)-(Y-muy).^2/(2*sigmay^2))+b
 
 %Adaptación de los datos al formato adecuado para el fit
 
-[X, Y, Z]= prepareSurfaceData(x,y,image);
+[X, Y, Z]= prepareSurfaceData(x,y,double(image));
 
-%Ejecución del fit, indicando los parámetros dependientes del problema
-
-fitobject = fit([X,Y],Z, ffun2, 'problem', {maxpix, mux, muy});
-
+%Ejecución del fit, indicando los parámetros dependientes del problema, y
+%añadiendo algunas opciones para optimizar su tiempo de ejecución (sin
+%perjudicar el resultado)
+%fitobject = fit([X,Y],Z, ffun2, 'problem', {maxpix, mux, muy});
+%fitobject = fit([X,Y],Z, ffun2, 'problem', {maxpix, mux, muy}, 'StartPoint',[210, 7.2, 6.5]);
+%fitobject = fit([X,Y],Z, ffun2, 'problem', {maxpix, mux, muy}, 'StartPoint',[210, 7.2, 6.5], 'TolX', 10e-2);
+fitobject = fit([X,Y],Z, ffun2, 'problem', {maxpix, mux, muy}, 'StartPoint',[210, 7.2, 6.5], 'TolX', 10e-2, 'TolFun', 10e-2);
 %Adquisición de los valores ajustados
 
 values = coeffvalues(fitobject);
